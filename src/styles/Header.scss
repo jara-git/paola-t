@@ -1,0 +1,98 @@
+@use "./variables" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-unit * 1.5;
+    //border-bottom: 1px solid $color-neutral;
+    background-color: white;
+    color: $color-text;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 40px;
+    box-shadow: $box-shadow-light;
+
+    &__logo {
+        font-family: $font-logo;
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: $color-primary-dark;
+
+        img {
+            height: 2.5rem;
+            display: block;
+        }
+    }
+
+    &__toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: $color-primary;
+        cursor: pointer;
+
+        position: relative;
+        z-index: 1100;
+    }
+
+    &__nav {
+        display: flex;
+        gap: $spacing-unit * 1.5;
+        font-size: 0.875rem;
+        letter-spacing: 0.05em;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $color-primary;
+        font-family: $font-primary;
+        font-weight: normal;
+        transition: color 0.2s ease;
+
+        &--active {
+            font-weight: bold;
+            color: $color-primary-dark;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            color: $color-primary-dark;
+        }
+    }
+
+    // Responsive (para tablets y móviles)
+    @media (max-width: 768px) {
+        &__toggle {
+            display: block;
+        }
+
+        &__nav {
+            position: fixed; // FIXED para que quede encima y no dependa de padres
+            top: 10%; // arriba de la pantalla
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $color-background;
+            padding: $spacing-unit * 2;
+            flex-direction: column;
+            display: none;
+            z-index: 9999; // muy alto para que esté encima de todo
+
+            .header__link {
+                padding: $spacing-unit 0;
+                font-size: 1.25rem; // un poco más grande para móvil
+            }
+        }
+
+        &__nav--open {
+            display: flex;
+            height: min-content;
+            background-color: white;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// src/styles/main.scss
+@use './variables' as v;
+// @import './mixins';
+
+
+//global styles and fonts
+body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: #ffffff;
+    color: #111;
+}
+
+h1,
+h2,
+h3 {
+    font-family: v.$font-heading;
+    letter-spacing: v.$letter-spacing-m;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0; }
+
+
+
+        

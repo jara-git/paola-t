@@ -1,0 +1,29 @@
+@use "./variables" as *;
+
+/* CONTENEDOR DE COLUMNA MASONRY */
+.gallery-grid {
+    display: flex;
+    margin-left: -32px;
+    width: 100%;
+}
+
+.gallery-column {
+    padding-left: 32px;
+    background-clip: padding-box;
+
+    >.gallery-item {
+        margin-bottom: 32px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 599px) {
+    .gallery-grid {
+        flex-direction: column;
+        margin-left: 0 !important;
+    }
+
+    .gallery-column {
+        padding-left: 0 !important;
+    }
+}

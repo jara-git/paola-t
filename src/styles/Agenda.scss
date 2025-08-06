@@ -1,0 +1,40 @@
+@use '../styles/variables' as *;
+
+.agenda {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: $spacing-unit * 2;
+
+    h1,
+    h2 {
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        color: $color-primary-dark;
+        margin-bottom: $spacing-unit;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 1rem;
+        color: $color-text;
+        margin-bottom: $spacing-unit;
+    }
+
+    .course {
+        background: $color-neutral;
+        border-radius: $border-radius;
+        padding: $spacing-unit;
+        margin-bottom: $spacing-unit;
+        box-shadow: $box-shadow-light;
+
+        h3 {
+            font-weight: 700;
+            color: $color-primary;
+        }
+
+        .date {
+            font-style: italic;
+            color: $color-secondary;
+        }
+    }
+}
