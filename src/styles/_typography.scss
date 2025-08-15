@@ -1,0 +1,49 @@
+@use './variables' as v;
+
+// Títulos
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: v.$font-heading;
+    letter-spacing: v.$letter-spacing-m;
+    font-weight: 700;
+    color: v.$color-primary-dark;
+    margin: 0 0 v.$spacing-unit 0;
+    line-height: 1.2;
+}
+
+// Tamaños escalonados
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+h4 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+h5 {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+}
+
+h6 {
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+}
+
+// Párrafos
+p {
+    font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem); // 14px a 16px según pantalla
+    line-height: 1.6;
+    color: v.$color-text;
+    margin-bottom: v.$spacing-unit;
+}

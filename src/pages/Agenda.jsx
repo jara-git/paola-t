@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../styles/Agenda.scss'; 
+import AnimatedTitle from '../components/AnimatedTitle';
+import '../styles/Agenda.scss';
 
 export default function Agenda() {
     const [eventos, setEventos] = useState([]);
@@ -9,14 +10,10 @@ export default function Agenda() {
         const fetchEventos = async () => {
             try {
                 const response = await axios.get(
-                    `https://api.airtable.com/v0/<TU_BASE_ID>/Eventos`, // cambia nombre tabla si es necesario
+                    `https://api.airtable.com/v0/<TU_BASE_ID>/Eventos`,
                     {
-                        headers: {
-                            Authorization: `Bearer <TU_TOKEN>`,
-                        },
-                        params: {
-                            sort: [{ field: "Fecha", direction: "asc" }],
-                        },
+                        headers: { Authorization: `Bearer <TU_TOKEN>` },
+                        params: { sort: [{ field: 'Fecha', direction: 'asc' }] },
                     }
                 );
                 setEventos(response.data.records);
@@ -30,7 +27,8 @@ export default function Agenda() {
 
     return (
         <section className="agenda">
-            <h2 className="agenda__title">Agenda</h2>
+            <AnimatedTitle text="Agenda" />
+
             <ul className="agenda__list">
                 {eventos.map((evento) => {
                     const { Fecha, Título, Descripción, Lugar, Enlace, Cartel } = evento.fields;
@@ -40,7 +38,11 @@ export default function Agenda() {
                             <p><strong>Fecha:</strong> {new Date(Fecha).toLocaleDateString()}</p>
                             <p><strong>Lugar:</strong> {Lugar}</p>
                             <p>{Descripción}</p>
-                            {Enlace && <p><a href={Enlace} target="_blank" rel="noopener noreferrer">Más info</a></p>}
+                            {Enlace && (
+                                <p>
+                                    <a href={Enlace} target="_blank" rel="noopener noreferrer">Más info</a>
+                                </p>
+                            )}
                             {Cartel && Cartel[0]?.url && (
                                 <img src={Cartel[0].url} alt={`Cartel de ${Título}`} className="agenda__image" />
                             )}
@@ -51,6 +53,3 @@ export default function Agenda() {
         </section>
     );
 }
-
-
-

@@ -1,43 +1,40 @@
+// flat-style.scss
+
 // Colores principales
-$color-primary: #15667a; // Azul petróleo (principal / dominante)
-$color-primary-dark: #09254b; // Azul más oscuro (alternativa más seria)
-$color-secondary: #77b28c; // Verde salvia (acentos, hover)
-$color-contrast: #b4654a; // Terracota (llamadas a la acción)
-$color-neutral: #c2c5bb; // Gris piedra (fondos claros, cajas)
-$color-text: #1a1a1a; // Texto general (casi negro)
+$color-primary: #15667a; // Azul petróleo
+$color-primary-dark: #09254b;
+$color-secondary: #77b28c;
+$color-contrast: #b4654a;
+$color-neutral: #c2c5bb;
+$color-text: #1a1a1a;
 
 // Fondos
-$color-background: #fffaf0b8; // Fondo base blanco roto
+$color-background: #fffaf0b8;
 
-//Tipografías
+// Tipografías
 $font-primary: 'Libre Baskerville', serif;
 $font-logo: 'Oswald', sans-serif;
 $font-heading: 'Libre Baskerville', serif, bold;
 $letter-spacing-m: 0.1rem;
-$letter-spacing-l: 0.2rem;
 
-//Dimensiones
+// Tamaño base de párrafo (variable)
+$p: 0.875rem; // 14px
+
+// Dimensiones
 $max-width: 1200px;
 $spacing-unit: 1rem;
 
-//Extras
-$border-radius: 0.5rem;
-$box-shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+// Extras
+$border-radius: 0rem;
+$box-shadow-light: 0 1px 1px rgba(0, 0, 0, 0.05);
 
+// Contenedores
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: $spacing-unit;
+}
 
-// Color Hex Impresión / Uso sugerido Azul petróleo #15667a Color principal / dominante. Sofisticado,
-// serio pero moderno. Ideal para encabezados,
-// botones,
-// enlaces. Verde salvia #77b28c Color secundario / acentos. Natural,
-// sereno. Útil para hover,
-// elementos decorativos,
-// fondo de secciones. Gris piedra #c2c5bb Color neutro / fondo. Claro,
-// suave,
-// ideal para fondo general o cajas de contenido. Terracota #b4654a Color de contraste / detalles. Cálido y humano. Perfecto para destacar llamadas a la acción (como un botón de “Contáctame”).
-
-// $color-primary Encabezados,
-// enlaces,
-// botones $color-primary-dark	Alternativa elegante o hover fuerte $color-secondary	Hover suave,
-// decoración $color-neutral	Fondos de secciones,
-// cajas $color-contrast	Botones de CTA como "Contáctame"
-// $color-text	Texto base
+section {
+    padding: 2 * $spacing-unit 0;
+}

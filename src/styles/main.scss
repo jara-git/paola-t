@@ -1,6 +1,7 @@
 // src/styles/main.scss
 @use './variables' as v;
-// @import './mixins';
+@use './typography';
+@use './animations';
 
 
 //global styles and fonts
@@ -10,12 +11,6 @@ body {
     color: #111;
 }
 
-h1,
-h2,
-h3 {
-    font-family: v.$font-heading;
-    letter-spacing: v.$letter-spacing-m;
-}
 
 html,
 body,

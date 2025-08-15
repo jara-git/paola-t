@@ -20,5 +20,7 @@ html, body {
   max-width: 800px;
   position: relative; 
   z-index: auto; 
-
+  @media (max-width: 768px) {
+    padding-top: 0;
+}
 }

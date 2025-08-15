@@ -1,29 +1,45 @@
 @use "./variables" as *;
 
-/* CONTENEDOR DE COLUMNA MASONRY */
-.gallery-grid {
+$gutter: 32px;
+
+.gallery-wrapper {
     display: flex;
-    margin-left: -32px;
+    justify-content: center;
     width: 100%;
 }
 
+.gallery-inner {
+    width: 100%;
+    max-width: $max-width; // ancho máximo de la galería
+    margin: 0 auto; // centra automáticamente
+    padding: 0 $spacing-unit; // respira lateralmente
+}
+
+.gallery-grid {
+    display: flex;
+    margin-left: -$gutter; // Masonry offset
+    width: auto;
+}
+
 .gallery-column {
-    padding-left: 32px;
+    padding-left: $gutter;
     background-clip: padding-box;
 
     >.gallery-item {
-        margin-bottom: 32px;
+        margin-bottom: $gutter;
     }
 }
 
-/* MOBILE */
-@media (max-width: 599px) {
-    .gallery-grid {
-        flex-direction: column;
-        margin-left: 0 !important;
+/* Tablets */
+@media (max-width: 1024px) {
+    .gallery-inner {
+        padding: 0 1.5rem;
     }
+}
 
-    .gallery-column {
-        padding-left: 0 !important;
+/* Móviles */
+@media (max-width: 600px) {
+    .gallery-inner {
+        padding: 0 2.5rem;
     }
 }

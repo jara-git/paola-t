@@ -1,0 +1,20 @@
+// src/styles/_animations.scss
+@use "./variables" as *;
+
+.animated-title {
+    display: inline-block;
+    white-space: nowrap;
+
+    .letter {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(0.5em) scale(0.98); // usar em para adaptarse al tamaño de fuente
+        transition: opacity 400ms ease, transform 400ms ease;
+        will-change: opacity, transform;
+    }
+
+    &.is-visible .letter {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

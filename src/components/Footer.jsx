@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="footer__content">
                 <p className="footer__text">© {new Date().getFullYear()} Paola T. Todos los derechos reservados.</p>
                 <p className="footer__small">
-                    Hecho con 💜 desde Zúrich
+                    <a target="_blank" rel="noopener noreferrer" href='https://jara-portfolio.netlify.app/'>Hecho con 💜 desde Zúrich</a>
                 </p>
             </div>
         </footer>

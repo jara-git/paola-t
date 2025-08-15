@@ -1,4 +1,6 @@
+//contact.scss
 @use './variables' as *;
+@use './cta' as *;
 
 .contact-container {
     max-width: 600px;
@@ -6,16 +8,13 @@
     padding: 2rem;
     text-align: center;
 
-    h2 {
-        margin-bottom: 2rem;
-        font-size: 2rem;
-    }
-
     .contact-form {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
 
         input,
         textarea {
@@ -26,18 +25,7 @@
         }
 
         .cta-button {
-            align-self: center;
-            padding: 0.75rem 1.5rem;
-            background-color: $color-contrast;
-            color: white;
-            border: none;
-            border-radius: $border-radius;
-            cursor: pointer;
-            transition: background-color 0.3s;
-
-            &:hover {
-                background-color: darken($color-contrast, 10%);
-            }
+            @extend .cta-button;
         }
     }
 
@@ -56,5 +44,16 @@
         p {
             margin: 0.5rem 0;
         }
+    }
+
+    .section-title {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section-title.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

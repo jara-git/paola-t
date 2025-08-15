@@ -1,0 +1,62 @@
+@use './variables' as *;
+// ContactForm.scss
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: $spacing-unit;
+    border: 1px solid $color-neutral;
+    border-radius: 0;
+    background-color: white;
+    color: $color-text;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form textarea {
+    min-height: 200px;
+    resize: vertical;
+    font-family: $font-primary;
+     }
+
+.contact-form button {
+    all: unset; // elimina todos los estilos por defecto del botón
+    font-family: $font-primary;
+    font-size: 1rem;
+    color: $color-contrast;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 0.2rem;
+    margin-top: $spacing-unit;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.3rem;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $color-contrast;
+        opacity: 0;
+        transition: all 0.3s ease;
+        transform: scaleX(0);
+        transform-origin: left;
+        
+    }
+
+    &:hover {
+        color: $color-primary-dark;
+    }
+
+    &:hover::after {
+        background-color: $color-primary-dark;
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}

@@ -1,10 +1,12 @@
-// src/styles/Home.scss
 @use './variables' as *;
+@use './cta' as *;
 
 .home {
-    padding: $spacing-unit * 1.5;
+    // padding: 0 $spacing-unit;
     max-width: none;
     width: 100%;
+    // display: flex;
+    // justify-content: center;
 
     .contact-content {
         display: flex;
@@ -13,35 +15,12 @@
         align-items: center;
         margin-top: 2rem;
 
-
         .cta-button {
-            background-color: $color-contrast;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-family: $font-primary;
-            font-size: 1rem;
-            letter-spacing: $letter-spacing-m;
-            border-radius: $border-radius;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            text-decoration: none;
-
-            &:hover {
-                background-color: darken($color-contrast, 8%);
-                transform: scale(1.03);
-            }
-
-            &:active {
-                background-color: darken($color-contrast, 12%);
-                transform: scale(0.98);
-            }
-
-            &:focus {
-                outline: 2px solid $color-secondary;
-                outline-offset: 3px;
-            }
+            @extend .cta-button;
         }
     }
+        @media (max-width: 599px) {
+            padding: 0;
 
+        }
 }
