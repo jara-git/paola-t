@@ -1,15 +1,19 @@
-import Masonry from 'react-masonry-css'
-import GalleryItem from './GalleryItem'
-import '../styles/Gallery.scss'
+import React, { useState } from 'react';
+import Masonry from 'react-masonry-css';
+import GalleryItem from './GalleryItem';
+import GalleryModal from './GalleryModal';
+import '../styles/Gallery.scss';
 
 const breakpointCols = {
     default: 3,
     1280: 3,
     1024: 2,
     600: 1
-}
+};
 
-export default function Gallery({ works, onSelect }) {
+export default function Gallery({ works }) {
+    const [selectedWork, setSelectedWork] = useState(null);
+
     return (
         <div className="gallery-wrapper">
             <div className="gallery-inner">
@@ -22,14 +26,14 @@ export default function Gallery({ works, onSelect }) {
                         <GalleryItem
                             key={work.id}
                             work={work}
-                            onClick={() => onSelect(work)}
+                            onClick={setSelectedWork}
                         />
                     ))}
                 </Masonry>
             </div>
-            
+
+            {/* Modal */}
+            <GalleryModal work={selectedWork} onClose={() => setSelectedWork(null)} />
         </div>
-    )
+    );
 }
-
-

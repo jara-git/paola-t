@@ -1,5 +1,3 @@
-@use "./variables" as *;
-
 .gallery-item {
     position: relative;
     cursor: pointer;
@@ -11,17 +9,55 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 
-    // Desktop (hover) y móvil (clase .active)
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+        border-bottom: 1px solid #aaa;
+    }
+
+    .caption {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+        text-align: left;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: #fff;
+            /* blanco puro o ligeramente semi‑transparente */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            /* blur más intenso */
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        h3,
+        p {
+            margin: 0 0 5px;
+            color: #000;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: transform 0.35s ease 0.05s, opacity 0.35s ease 0.05s;
+        }
+    }
+
     &:hover,
     &.active {
         transform: scale(1.05);
 
-        .caption {
+        .caption::before {
             opacity: 1;
-
-            &::before {
-                opacity: 1;
-            }
         }
 
         .caption h3,
@@ -31,67 +67,9 @@
         }
     }
 
-    // Evitar “saltos” en móvil (sin hover)
     @media (hover: none) {
         &:hover {
             transform: none;
-        }
-
-        &.active {
-            transform: none;
-        }
-    }
-
-    img {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        border-bottom: 1px solid #aaa;
-        transition: transform 0.3s ease;
-    }
-
-    .caption {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        text-align: left;
-        padding: 20px;
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(255, 250, 240, 0.4);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-        }
-
-        h3,
-        p {
-            opacity: 0;
-            color: $color-text;
-            transform: translateY(10px);
-            transition:
-                opacity 0.3s ease,
-                transform 0.3s ease;
-            margin: 0 0 5px;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .gallery-item {
-            h3 {
-                font-size: $p;
-            }
         }
     }
 }

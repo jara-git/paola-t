@@ -1,5 +1,6 @@
 @use "./variables" as *;
 
+// Gallery wrapper y grid
 $gutter: 32px;
 
 .gallery-wrapper {
@@ -10,14 +11,14 @@ $gutter: 32px;
 
 .gallery-inner {
     width: 100%;
-    max-width: $max-width; // ancho máximo de la galería
-    margin: 0 auto; // centra automáticamente
-    padding: 0 $spacing-unit; // respira lateralmente
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-unit;
 }
 
 .gallery-grid {
     display: flex;
-    margin-left: -$gutter; // Masonry offset
+    margin-left: -$gutter;
     width: auto;
 }
 

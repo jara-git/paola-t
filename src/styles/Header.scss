@@ -2,7 +2,7 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: $spacing-unit * 1.5;
     background-color: white;
@@ -22,7 +22,7 @@
         color: $color-primary-dark;
 
         img {
-            height: 1.5rem;
+            height: 2.5rem;
             display: block;
         }
     }

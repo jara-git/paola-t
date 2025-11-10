@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monograma PT – tipografías aplicadas a todos los elementos</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #faf8f6;
+            color: #111;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        svg {
+            width: 320px;
+            height: 300px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+            margin-bottom: 15px;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        button {
+            grid-column: span 3;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>Monograma PT interactivo – tipografías en todos los elementos</h1>
+
+        <svg viewBox="0 0 320 300" id="pt-logo">
+            <g id="all">
+                <!-- Cabeza -->
+                <circle id="head" cx="140" cy="60" r="20" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="2" />
+                <!-- Brazo curvable -->
+                <path id="arm" d="" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="2" />
+                <!-- Pierna -->
+                <rect id="leg" x="120" y="100" width="18" height="150" rx="8" fill="#0a0a0a" stroke="#0a0a0a"
+                    stroke-width="2" />
+                <!-- Barriga de la P -->
+                <path id="body" d="" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="2" />
+            </g>
+        </svg>
+
+        <div class="controls">
+            <label>Cabeza X<input id="headX" type="range" min="100" max="200" value="140"></label>
+            <label>Cabeza Y<input id="headY" type="range" min="30" max="120" value="60"></label>
+            <label>Brazo curvatura<input id="armCurve" type="range" min="0" max="50" value="0"></label>
+            <label>Brazo rotación<input id="armRot" type="range" min="-20" max="20" value="0"></label>
+            <label>Pierna rotación<input id="legRot" type="range" min="-10" max="15" value="0"></label>
+            <label>Barriga X<input id="bodyX" type="range" min="100" max="200" value="138"></label>
+            <label>Barriga Y<input id="bodyY" type="range" min="80" max="140" value="100"></label>
+            <label>Redondeo (0–30%)<input id="round" type="range" min="0" max="30" value="8"></label>
+            <label>Grosor stroke<input id="strokeWidth" type="range" min="0" max="8" value="2"></label>
+            <label>Color relleno<input id="fillColor" type="color" value="#0a0a0a"></label>
+            <label>Color stroke<input id="strokeColor" type="color" value="#b14f33"></label>
+            <label>Tipografía base
+                <select id="font-variant">
+                    <option value="none">Sin tipografía</option>
+                    <option value="futura">Futura</option>
+                    <option value="oswald">Oswald</option>
+                    <option value="helvetica">Helvetica</option>
+                    <option value="bodoni">Bodoni</option>
+                </select>
+            </label>
+        </div>
+
+        <button id="randomize">Generar Aleatorio</button>
+    </div>
+
+    <script>
+        const head = document.getElementById("head");
+        const arm = document.getElementById("arm");
+        const leg = document.getElementById("leg");
+        const body = document.getElementById("body");
+        const allShapes = [head, arm, leg, body];
+        const $ = id => document.getElementById(id);
+
+        function updateArm() {
+            const x = 100;
+            const y = 100;
+            const width = parseInt(arm.getAttribute("data-width") || 120);
+            const height = 18;
+            const curve = parseInt($("armCurve").value);
+
+            const cpY = curve;
+            const path = `M${x},${y} 
+          C${x + width / 3},${y + cpY} ${x + 2 * width / 3},${y + cpY} ${x + width},${y} 
+          L${x + width},${y + height} 
+          C${x + 2 * width / 3},${y + height + cpY} ${x + width / 3},${y + height + cpY} ${x},${y + height} Z`;
+            arm.setAttribute("d", path);
+        }
+
+        function updateBody() {
+            let bx = parseInt($("bodyX").value);
+            let by = parseInt($("bodyY").value);
+            let bWidth = parseInt(body.getAttribute("data-width") || 60);
+            let bRadius = parseInt(body.getAttribute("data-radius") || 30);
+            body.setAttribute("d", `M ${bx} ${by} h${bWidth} a${bRadius} ${bRadius} 0 0 1 0 60 h-${bWidth} z`);
+        }
+
+        function update() {
+            head.setAttribute("cx", $("headX").value);
+            head.setAttribute("cy", $("headY").value);
+
+            arm.setAttribute("transform", `rotate(${$("armRot").value},100,100)`);
+            leg.setAttribute("transform", `rotate(${$("legRot").value},120,100)`);
+
+            let roundPerc = parseFloat($("round").value) / 30;
+            leg.setAttribute("rx", 8 * roundPerc);
+
+            allShapes.forEach(el => {
+                el.setAttribute("fill", $("fillColor").value);
+                el.setAttribute("stroke", $("strokeColor").value);
+                el.setAttribute("stroke-width", $("strokeWidth").value);
+            });
+
+            // tipografía base
+            switch ($("font-variant").value) {
+                case "futura":
+                    arm.setAttribute("data-width", 140);
+                    leg.setAttribute("width", 20);
+                    body.setAttribute("data-width", 70);
+                    body.setAttribute("data-radius", 35);
+                    break;
+                case "oswald":
+                    arm.setAttribute("data-width", 110);
+                    leg.setAttribute("width", 14);
+                    body.setAttribute("data-width", 55);
+                    body.setAttribute("data-radius", 25);
+                    break;
+                case "helvetica":
+                    arm.setAttribute("data-width", 128);
+                    leg.setAttribute("width", 18);
+                    body.setAttribute("data-width", 65);
+                    body.setAttribute("data-radius", 28);
+                    break;
+                case "bodoni":
+                    arm.setAttribute("data-width", 150);
+                    leg.setAttribute("width", 10);
+                    body.setAttribute("data-width", 80);
+                    body.setAttribute("data-radius", 40);
+                    break;
+                default:
+                    arm.setAttribute("data-width", 120);
+                    leg.setAttribute("width", 18);
+                    body.setAttribute("data-width", 60);
+                    body.setAttribute("data-radius", 30);
+                    break;
+            }
+
+            updateArm();
+            updateBody();
+        }
+
+        document.querySelectorAll("input,select").forEach(el => {
+            el.addEventListener("input", update);
+        });
+
+        document.getElementById("randomize").addEventListener("click", () => {
+            ["headX", "headY", "armRot", "legRot", "bodyX", "bodyY", "round", "strokeWidth", "armCurve"].forEach(id => {
+                const input = $(id);
+                input.value = Math.floor(Math.random() * (input.max - input.min)) + parseInt(input.min);
+            });
+            $("fillColor").value = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+            $("strokeColor").value = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+            update();
+        });
+
+        update();
+    </script>
+</body>
+
+</html>
