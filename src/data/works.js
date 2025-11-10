@@ -3,10 +3,10 @@ const works = [
         id: 1,
         title: "Rosas",
         image: [
-            'src/assets/rosas/rosas-1.jpeg',
-            'src/assets/rosas/rosas-1-31.jpeg',
-            'src/assets/rosas/rosas-2-33.jpeg',
-            'src/assets/rosas/rosas-3-35.jpeg'
+            '/assets/rosas/rosas-1.jpeg',
+            '/assets/rosas/rosas-1-31.jpeg',
+            '/assets/rosas/rosas-2-33.jpeg',
+            '/assets/rosas/rosas-3-35.jpeg'
         ],
         description: [
             "Actriz de cine y teatro, cantante y escritora, Hildegard Knef es considerada la última gran diva alemana del siglo XX.",
@@ -29,13 +29,13 @@ const works = [
         id: 2,
         title: "Negación de cualquier utopía liberadora",
         image: [
-            'src/assets/negacion/negacion-01.png',
-            'src/assets/negacion/negacion-5-39.jpeg',
-            'src/assets/negacion/negacion-6-41.jpeg',
-            'src/assets/negacion/negacion-7-43.jpeg',
-            'src/assets/negacion/negacion-8-45.jpeg',
-            'src/assets/negacion/negacion-9-47.jpeg',
-            'src/assets/negacion/negacion-10-49.jpeg'
+            '/assets/negacion/negacion-01.png',
+            '/assets/negacion/negacion-5-39.jpeg',
+            '/assets/negacion/negacion-6-41.jpeg',
+            '/assets/negacion/negacion-7-43.jpeg',
+            '/assets/negacion/negacion-8-45.jpeg',
+            '/assets/negacion/negacion-9-47.jpeg',
+            '/assets/negacion/negacion-10-49.jpeg'
         ],
         description: [
             "…despoblada/vacía/sola/impar…de la imposibilidad de amar…espinas…piedras que lloran..."
@@ -53,12 +53,12 @@ const works = [
         id: 3,
         title: "EsoS",
         image: [
-            'src/assets/esos/esos-01.jpeg',
-            'src/assets/esos/esos-1-31.jpeg',
-            'src/assets/esos/esos-3-35.jpeg',
-            'src/assets/esos/esos-4-37.jpeg',
-            'src/assets/esos/esos-5-39.jpeg',
-            'src/assets/esos/esos-6-41.jpeg'
+            '/assets/esos/esos-01.jpeg',
+            '/assets/esos/esos-1-31.jpeg',
+            '/assets/esos/esos-3-35.jpeg',
+            '/assets/esos/esos-4-37.jpeg',
+            '/assets/esos/esos-5-39.jpeg',
+            '/assets/esos/esos-6-41.jpeg'
         ],
         description: "…el mundo está pensado por y para los que tienen poder…el poder siempre busca los medios para perpetuarse…las decisiones fundamentales no se consultan… la falta de oportunidades parece culpa del que la padece… y se vio que esto era bueno…a la gente se le engaña como a chinos…y se vio que esto era bueno…general la mayor cantidad de cómplices posible es una manera de hacer que no haya responsables… lo peor es ser cómplices obligados… lo peor es que son intereses muy mezquinos los que mueven el mundo… un interés mezquino siempre tendrá más fuerza que un ideal… la falta de honestidad es lo más común…lo peor es la justificación y legitimación de lo peor…",
         year: 2012,
@@ -76,10 +76,10 @@ const works = [
         id: 4,
         title: "Romance de la infanticida",
         image: [
-            'src/assets/romance-infanticida/romance-infanticida-image1.jpeg',
-            'src/assets/romance-infanticida/romance-infanticida-image2-33.jpeg',
-            'src/assets/romance-infanticida/romance-infanticida-image3-35.jpeg',
-            'src/assets/romance-infanticida/romance-infanticida-image4-37.jpeg'
+            '/assets/romance-infanticida/romance-infanticida-image1.jpeg',
+            '/assets/romance-infanticida/romance-infanticida-image2-33.jpeg',
+            '/assets/romance-infanticida/romance-infanticida-image3-35.jpeg',
+            '/assets/romance-infanticida/romance-infanticida-image4-37.jpeg'
         ],
         description: [
             "¿Qué me importa a mí de eso? ¿Qué me importa de la cena?",
