@@ -1,27 +1,54 @@
-import { useState, useEffect } from 'react'
-import '../styles/GalleryModal.scss'
+import { useState, useEffect } from 'react';
+import '../styles/GalleryModal.scss';
 
 export default function GalleryModal({ work, onClose }) {
-    const [activeImage, setActiveImage] = useState(0)
+    const [activeImage, setActiveImage] = useState(0);
 
     useEffect(() => {
-        setActiveImage(0)
-    }, [work])
+        setActiveImage(0);
+    }, [work]);
 
-    if (!work) return null
+    if (!work) return null;
+
+    // Función para formatear la descripción del poema en estrofas
+    const formatDescription = (description) => {
+        // Si la descripción es un array (poema con estrofas), ya está bien formateada
+        if (Array.isArray(description)) {
+            return description.map((line, index) => {
+                if (line === '') {
+                    return <br key={index} />; // Esto es un salto de línea entre estrofas
+                }
+                return <p key={index}>{line}</p>;
+            });
+        }
+
+        // Si la descripción es un solo string, lo dividimos por saltos de línea
+        if (typeof description === 'string') {
+            const lines = description.split('\n');
+            return lines.map((line, index) => {
+                if (line === '') {
+                    return <br key={index} />; // Salto de línea entre estrofas
+                }
+                return <p key={index}>{line}</p>;
+            });
+        }
+
+        return null;
+    };
 
     return (
         <div className="gallery-modal-overlay">
             <div className="gallery-modal-content">
                 <button onClick={onClose} className="gallery-modal-close-button">✕</button>
-
                 {/* Título y año */}
                 <h2 className="gallery-modal-title">{work.title}</h2>
                 <p className="gallery-modal-year">{work.year}</p>
 
-                {/* Mini descripción (si hay) */}
+                {/* Descripción (formateada como poema) */}
                 {work.description && (
-                    <p className="gallery-modal-description">{work.description}</p>
+                    <div className="gallery-modal-description">
+                        {formatDescription(work.description)}
+                    </div>
                 )}
 
                 {/* Imágenes: principal + miniaturas */}
@@ -32,7 +59,6 @@ export default function GalleryModal({ work, onClose }) {
                             alt={`${work.title} - imagen grande`}
                             className="gallery-modal-image-large"
                         />
-
                         <div className="gallery-modal-thumbnails">
                             {work.image.map((imgSrc, index) => (
                                 <img
@@ -81,5 +107,5 @@ export default function GalleryModal({ work, onClose }) {
                 )}
             </div>
         </div>
-    )
+    );
 }
