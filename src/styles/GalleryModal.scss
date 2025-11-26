@@ -1,3 +1,4 @@
+/* Overlay del modal */
 .gallery-modal-overlay {
     position: fixed;
     inset: 0;
@@ -11,30 +12,35 @@
     padding: 40px 20px;
 }
 
+/* Contenido del modal */
 .gallery-modal-content {
     background: #fff;
     padding: 32px;
     border-radius: 0;
     max-width: 900px;
-    // width: 100%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 24px;
     max-height: 800px;
     overflow-y: auto;
-    @media (max-width: 1024px) {
-    max-height: 700px;
-    overflow-y: auto;
-    }
-    /* Móviles */
-        @media (max-width: 600px) {
-            max-height: 700px;
-            overflow-y: auto;
-        }
 }
 
+/* Media queries */
+@media (max-width: 1024px) {
+    .gallery-modal-content {
+        max-height: 700px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-modal-content {
+        max-height: 700px;
+    }
+}
+
+/* Botón de cierre */
 .gallery-modal-close-button {
     position: absolute;
     top: 12px;
@@ -46,6 +52,7 @@
     color: #333;
 }
 
+/* Título y año */
 .gallery-modal-title {
     font-size: 1.8rem;
     margin-bottom: 0;
@@ -57,93 +64,114 @@
     margin-top: 0;
 }
 
+/* Descripción */
 .gallery-modal-description {
     font-size: 1rem;
     line-height: 1.5;
     color: #333;
+    max-width: 640px;
+    /* ancho máximo */
+    margin: 0 auto;
 }
 
+/* Imágenes */
 .gallery-modal-images {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-
-    .gallery-modal-image-large {
-        max-width: 100%;
-        max-height: 600px;
-        height: auto;
-        border-radius: 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .gallery-modal-thumbnails {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 10px;
-
-        .thumbnail {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 0;
-            cursor: pointer;
-            opacity: 0.6;
-            border: 2px solid transparent;
-            transition: opacity 0.2s, border 0.2s;
-
-            &.active {
-                opacity: 1;
-                border-color: #333;
-            }
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
 }
 
-.gallery-modal-video video {
-    width: 100%;
+.gallery-modal-images .gallery-modal-image-large {
+    max-width: 100%;
+    max-height: 600px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Miniaturas */
+.gallery-modal-images .gallery-modal-thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.gallery-modal-images .gallery-modal-thumbnails .thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: opacity 0.2s, border 0.2s;
+}
+
+.gallery-modal-images .gallery-modal-thumbnails .thumbnail.active {
+    opacity: 1;
+    border-color: #333;
+}
+
+.gallery-modal-images .gallery-modal-thumbnails .thumbnail:hover {
+    opacity: 1;
+}
+
+/* Video */
+.gallery-modal-video video,
+.gallery-modal-video iframe {
+    display: block;
+    margin: 16px auto 0;
+    width: 50%;
     max-height: 480px;
     border-radius: 0;
-    margin-top: 16px;
 }
 
+/* Créditos */
 .gallery-modal-credits {
     margin-top: 16px;
-
-    h3 {
-        margin-bottom: 8px;
-    }
-
-    ul {
-        padding-left: 20px;
-
-        li {
-            font-size: 0.95rem;
-            margin-bottom: 4px;
-        }
-    }
 }
 
+.gallery-modal-credits h3 {
+    margin-bottom: 8px;
+}
+
+.gallery-modal-credits ul {
+    padding-left: 20px;
+}
+
+.gallery-modal-credits ul li {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+/* Dossier PDF */
 .gallery-modal-dossier {
     margin-top: 20px;
+}
 
-    a {
-        display: inline-block;
-        padding: 8px 16px;
-        background-color: #000;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 0;
-        font-size: 0.95rem;
+.gallery-modal-dossier a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0;
+    font-size: 0.95rem;
+}
 
-        &:hover {
-            background-color: #333;
-        }
+.gallery-modal-dossier a:hover {
+    background-color: #333;
+}
+
+/* Responsive para video en móviles */
+@media (max-width: 600px) {
+
+    .gallery-modal-video video,
+    .gallery-modal-video iframe {
+        width: 100%;
+        max-height: 360px;
     }
 }

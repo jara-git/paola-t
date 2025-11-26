@@ -12,46 +12,80 @@ export default function GalleryModal({ work, onClose }) {
 
     // Función para formatear la descripción del poema en estrofas
     const formatDescription = (description) => {
-        // Si la descripción es un array (poema con estrofas), ya está bien formateada
         if (Array.isArray(description)) {
             return description.map((line, index) => {
-                if (line === '') {
-                    return <br key={index} />; // Esto es un salto de línea entre estrofas
-                }
+                if (line === '') return <br key={index} />;
                 return <p key={index}>{line}</p>;
             });
         }
-
-        // Si la descripción es un solo string, lo dividimos por saltos de línea
         if (typeof description === 'string') {
             const lines = description.split('\n');
             return lines.map((line, index) => {
-                if (line === '') {
-                    return <br key={index} />; // Salto de línea entre estrofas
-                }
+                if (line === '') return <br key={index} />;
                 return <p key={index}>{line}</p>;
             });
         }
-
         return null;
+    };
+
+    // Función para generar iframe de YouTube o Vimeo
+    const renderVideo = (videoUrl) => {
+        if (videoUrl.includes('youtu')) {
+            const embedUrl = videoUrl
+                .replace('youtu.be/', 'www.youtube.com/embed/')
+                .replace('watch?v=', 'embed/');
+            return (
+                <iframe
+                    width="100%"
+                    height="360"
+                    src={embedUrl}
+                    title={work.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+            );
+        } else if (videoUrl.includes('vimeo')) {
+            const embedUrl = videoUrl.replace('vimeo.com', 'player.vimeo.com/video');
+            return (
+                <iframe
+                    width="100%"
+                    height="360"
+                    src={embedUrl}
+                    title={work.title}
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+            );
+        } else {
+            // Video local o directo
+            return (
+                <video controls>
+                    <source src={videoUrl} type="video/mp4" />
+                    Tu navegador no soporta el video.
+                </video>
+            );
+        }
     };
 
     return (
         <div className="gallery-modal-overlay">
             <div className="gallery-modal-content">
                 <button onClick={onClose} className="gallery-modal-close-button">✕</button>
+
                 {/* Título y año */}
                 <h2 className="gallery-modal-title">{work.title}</h2>
                 <p className="gallery-modal-year">{work.year}</p>
 
-                {/* Descripción (formateada como poema) */}
+                {/* Descripción */}
                 {work.description && (
                     <div className="gallery-modal-description">
                         {formatDescription(work.description)}
                     </div>
                 )}
 
-                {/* Imágenes: principal + miniaturas */}
+                {/* Imágenes */}
                 {Array.isArray(work.image) && work.image.length > 0 && (
                     <div className="gallery-modal-images">
                         <img
@@ -73,17 +107,14 @@ export default function GalleryModal({ work, onClose }) {
                     </div>
                 )}
 
-                {/* Video (si hay) */}
+                {/* Video */}
                 {work.video && (
                     <div className="gallery-modal-video">
-                        <video controls>
-                            <source src={work.video} type="video/mp4" />
-                            Tu navegador no soporta el video.
-                        </video>
+                        {renderVideo(work.video)}
                     </div>
                 )}
 
-                {/* Créditos (opcional) */}
+                {/* Créditos */}
                 {work.credits && work.credits.length > 0 && (
                     <div className="gallery-modal-credits">
                         <h3>Créditos</h3>
@@ -97,7 +128,7 @@ export default function GalleryModal({ work, onClose }) {
                     </div>
                 )}
 
-                {/* Dossier (PDF) */}
+                {/* Dossier */}
                 {work.dossierUrl && (
                     <div className="gallery-modal-dossier">
                         <a href={work.dossierUrl} target="_blank" rel="noopener noreferrer">

@@ -112,6 +112,73 @@ const works = [
         ],
         dossierUrl: 'https://example.com/dossiers/volver_a_la_sal.pdf',
         video: null
+    },
+    {
+        id: 5,
+        title: "El Cojo de Vera",
+        image: [
+            '/assets/cojo-de-vera/cojo-de-vera1.jpeg',
+            '/assets/cojo-de-vera/cojo-de-vera2.jpeg',
+            '/assets/cojo-de-vera/cojo-de-vera3.jpeg',
+            '/assets/cojo-de-vera/cojo-de-vera4.jpeg',
+            '/assets/cojo-de-vera/cojo-de-vera5.jpeg',
+            '/assets/cojo-de-vera/cojo-de-vera6.jpeg'
+        ],
+        description: [
+            "El Cojo de Vera o una Reflexión sobre España, narra la vida de los excluidos y olvidados, aquellos que, impotentes y resignados, sufren las consecuencias de un determinismo social y de la desigualdad económica. La sumisión y la obediencia se convierten en sus únicas armas de supervivencia. La historia refleja los abusos hacia los desfavorecidos y cuestiona la relación con la tierra donde nacen. Ambientada en la Andalucía rural y minera de principios del siglo XX, sigue a un personaje pobre y analfabeto cuya vida se ve marcada por hechos históricos y políticos como el reparto de tierras, la Guerra Civil y la matanza en la carretera hacia Almería, mostrando cómo estos acontecimientos impactan decisivamente en su existencia."
+        ],
+        year: 2013,
+        category: "danza-teatro",
+        credits: [
+            {
+                role: "Intérpretes", value: "Quico García Carlos Herranz ,Juan Luís Urgel , Cecilia Rivera, Pamela Cervantes, Laetitia Rigaud Lodeiro, Palmira Durán, Fran Baibás, Cynthia Lopez Ucero, Ricardo Santos, Osman Kocak y Antje Zemmin"
+            },
+            { role: "Dramaturgia", value: "Antonio Sansano, Paola T. Sanchís" },
+            { role: "Autor", value: "Paola T." },
+            { role: "Vestuario", value: "Mayte Martín, López y Barragán Moda Flamenca" },
+            { role: "Iluminación y escenografía", value: "Helena Conejero" },
+            { role: "Sonido", value: "David Montalvo, Sara Álvarez" },
+            { role: "Espacio escénico y escenografía", value: "Davinia Fillol" }, 
+            { role: "Diseño carteles", value: "Ay Carmela Pro" },
+            { role: "Asistente de coreografía", value: "Antje Zemmin" },
+            { role: "Dirección", value: "Paola T." }
+        ],
+        dossierUrl: '/assets/dossier-obras/dossier-el-cojo-de-vera.pdf',
+        video: 'https://youtu.be/_MAG9x-vkfQ?si=XRzvFrx5_KSC9leD'
+    },
+    {
+        id: 6,
+        title: "Júbilo",
+        image: [
+            '/assets/jubilo/jubilo1.jpeg',
+            '/assets/jubilo/jubilo11.jpeg',
+            '/assets/jubilo/jubilo3.jpeg',
+            '/assets/jubilo/jubilo5.jpeg',
+            '/assets/jubilo/jubilo7.jpeg',
+            '/assets/jubilo/jubilo9.jpeg'
+        ],
+        description: [
+            "El espectáculo invita al espectador a reflexionar sobre la existencia, el paso del tiempo, los cuerpos y las relaciones humanas. A través de la mirada de once jubilados en escena, la obra rompe barreras generacionales, mostrando que la diferencia de edad no es un obstáculo, sino una oportunidad para la interacción humana. Mediante acciones físicas y documentos autobiográficos, los actores revelan los prejuicios sociales sobre la tercera edad. La pieza fue seleccionada en el Festival FRINGE Madrid 2013."
+        ],
+        year: 2014,
+        category: "teatro documento",
+        credits: [
+            {
+                role: "Intérpretes", value: "Fernando Valenzuela, Antonia Cilla.Fernando Horcas, Nati Flores.Carlos Arce, Pilar Amblés, Mª Cristina Soto ,Andrés Charriel, Enrique Díaz, Ana María Aceituno, Mª Jesús Aceituno, Adela Jordán, Alberto Santamaría, José Rubio, Paloma Álvarez, Manu Báñez."
+            },
+            { role: "Espacio escénico", value: "Ana Montes" },
+            { role: "Espacio sonoro", value: "Manu Báñez" },
+            { role: "Iluminación", value: "Víctor Blázquez, Lía Alves" },
+            { role: "Vídeo", value: "Isa Muradás, Sara Calatrava" },
+            { role: "Coreografía", value: "F. de asfalto" },
+            { role: "Pedagogía", value: "Paola T. Sanchis, Manu Báñez" },
+            { role: "Creación", value: "Manu Báñez, Paola T. Sanchís, Antje Zemmin" },
+            { role: "Dramaturgia", value: "Manu Báñez, Antje Zemmin, Paola T. Sanchís" },
+            { role: "Dramaturgista", value: "Alejandro Ruffoni" },
+            { role: "Producción", value: "F. de asfalto." }
+        ],
+        dossierUrl: '/assets/dossier-obras/dossier-jubilo_compressed.pdf',
+        video: 'https://vimeo.com/62953618?fl=pl&fe=vl'
     }
 ];
 

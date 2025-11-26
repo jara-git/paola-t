@@ -12,7 +12,7 @@ export default function About() {
                 {/* Primer bloque de párrafos al lado de la foto */}
                 <div className="about__text-with-photo">
                     <div className="about__photo">
-                        <img src="src/assets/paola-t-retrato.jpg" alt="Retrato de Paola" />
+                        <img src="/assets/paola-t-retrato.jpg" alt="Retrato de Paola" />
                     </div>
 
                     <p>
