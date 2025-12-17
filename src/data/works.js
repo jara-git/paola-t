@@ -47,7 +47,7 @@ const works = [
             { role: "interpretación", value: "Paola T." }
         ],
         dossierUrl: "https://example.com/dossiers/entre_sombras.pdf",
-        video: 'https://youtu.be/_MAG9x-vkfQ'
+        video: null
     },
     {
         id: 3,
@@ -70,7 +70,7 @@ const works = [
             { role: "Dirección", value: "Paola T." }
         ],
         dossierUrl: null,
-        video: 'https://youtu.be/_MAG9x-vkfQ'
+        video: null
     },
     {
         id: 4,
@@ -179,6 +179,30 @@ const works = [
         ],
         dossierUrl: '/assets/dossier-obras/dossier-jubilo_compressed.pdf',
         video: 'https://vimeo.com/62953618?fl=pl&fe=vl'
+    },
+    {
+        id: 7,
+        title: "La biopolítica en el cuerpo de Salomé, o la explotación de los cuerpos inocentes",
+        image: [
+            '/assets/biopolitica-cuerpo-Salome/biopolitica-cuerpo-Salome1.jpeg',
+            '/assets/biopolitica-cuerpo-Salome/biopolitica-cuerpo-Salome2.jpeg'
+        ],
+        description: [
+            "Ponencia performativa dentro del marco del congreso de filosofía y danza  celebrado en junio de 2019 en el centro de danza canal.",
+            "Nos proponemos investigar y crear un dispositivo que se base en la historia de una adolescente del siglo XXI, Salomé, centrándonos en las vivencias de las adolescentes que se trabajarán en proceso de investigación. Nuestro objetivo es que, a partir del trabajo corporal (funky, hiphop, danza urbana y voguing), nos hagamos conscientes de la violencia que se ejerce sobre nuestros cuerpos, y la consecuente necesidad de politizarlos, basándonos en entrevistas que realizaremos a colectivos en riesgo de exclusión. A partir de esta investigación(taller y entrevistas), reconstruiremos una historia de vida, la de Salomé, quien inconscientemente reproduce mecanismos de explotación, reformulados en la era farmacopornográfica, como diría Paul B.Preciado.",
+            "Salomé, como toda adolescente, persigue de manera frenética alcanzar el ritmo de vida que presupone una adaptación constante a nuevas formas de relacionarse tanto social como personalmente, determinada por el paradigma de explotación tecnológico en el que nos vemos inmersos.Los neo - marxismos y la biopolítica coinciden en cuestionar la ideología hegemónica que se nos impone desde la institución, y que repercute directamente en la práxis social, generando, como en la sociedad industrial que criticaba Marx, relaciones verticales de poder.",
+            "En este proyecto queremos incidir en las nuevas formas de explotación ejercidas sobre los cuerpos inocentes, para cuestionarlos mediante lenguajes que superen una lógica binaria, tal y como planteaba Artaud, en su teatro de la crueldad.En la adolescencia nos enfrentamos al mundo desde nuestro cuerpo inocente.Salomé es un lienzo en blanco, que crea su identidad.Se presenta al mundo a partir de una pulsión.Inevitablemente, su espontaneidad entrará en conflicto con la normatividad"
+        ],
+        year: 2019,
+        category: "ponencia performativa",
+        credits: [
+            {
+                role: "Ponentes performativas", value: "Paola T, Paloma Arroyo"
+            },
+            { role: "Bailarinas", value: "Alumnas IES Cervantes" },
+        ],
+        dossierUrl: null,
+        video: null
     }
 ];
 
