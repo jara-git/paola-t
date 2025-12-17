@@ -182,6 +182,63 @@ const works = [
     },
     {
         id: 7,
+        title: "No Estoy Aquí Para Entreteneros",
+        image: [
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros1.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros2.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros3.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros4.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros5.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros6.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros7.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros8.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros9.jpeg',
+            '/assets/no-estoy-aquí-para-entreteneros/no-estoy-aqui-para-entreteneros10.jpeg'
+            
+        ],
+        description: [
+            "Sísifo ha sido castigado por los dioses a subir todos los días una montaña cargado con una roca intensa y pesada, que cuando llega a la cima, cae si remedio, y así, durante toda la eternidad… a través de nuestras vivencias personales como creadores, nos acercamos al mito de Sísifo.",
+            "Sísifos modernos que arrastran su roca día a día y empiezan de cero en cada momento. Así consideramos el trabajo artístico, efímero y costoso, pero también absurdo y enriquecedor, como propone Camus.Hay un Sísifo feliz en esta rotación continua, en esta acción creadora repetitiva hay una salvación / revolución, y eso reivindicamos.",
+            "El proceso creativo, la construcción de escenas en una Torre de Babel o laberinto, que es la sala de ensayos.Las letras del flamenco, los porcentajes, las preguntas, las anécdotas, el juego…un enigma que se va resolviendo frente al público"
+        ],
+        year: 2016,
+        category: "danza - documento",
+        credits: [
+            {
+                role: "Baile", value: "Paola T., Carmen Cervantes, Antje Zemmin"
+            },
+            { role: "Cante", value: "Blanca Paloma" },
+            { role: "Guitarra flamenca", value: "Ricardo Santos" },
+            { role: "Coreografía", value: "Paola T. Carmen Cervantes y Antje Zemmin" },
+            { role: "Dirección escénica", value: "Antje Zemmin y Paola T." },
+            { role: "dea y concepto", value: "Paola T." }
+        ],
+        dossierUrl: '/assets/dossier-obras/dossier-no-estoy_compressed.pdf',
+        video: null
+    },
+    {
+        id: 8,
+        title: " Pater, mater y frater",
+        image: [
+            '/assets/mater-fater-frater/mater-fater-frater.png',
+        ],
+        description: [
+            "Este proyecto pretende investigar, profundizar y posicionarse frente a las relaciones paterno y maternofiliales reales, de madres, padres, hijos e hijas, que pertenezcan a una familia real. Se trabajará con cuatro parejas de diferentes familias del barrio donde se ubica el Centro Conde Duque, con la intención de investigar desde el hecho teatral las relaciones generacionales entre familiares, así como los diferentes lazos que les unen a la sociedad y el entorno en el que conviven o han convivido.",
+            "El fin de este trabajo, no es otro, que el de llevar al terreno de lo performativo las diferentes historias reales que habitan en nuestro entorno cercano, y observar cómo dichas micro historias se proyectan hacia el terreno de lo general, analizando la piel de nuestra sociedad cercana para hacernos una idea de lo que somos como macro sociedad.",
+            "¿Qué hay detrás de las relaciones paterno y maternofiliales? ¿Qué parte de nosotras está formada por lo que es o ha sido mi progenitor? ¿Somos lo que esperan que seamos? ¿Me reconozco en el otro? ¿Se repiten las historias?"
+        ],
+        year: 2018,
+        category: "Teatro documento- Residencia artística Conde Duque",
+        credits: [
+            {
+                role: "Dirección y ideación", value: "Paola T. Sanchís y Manu Báñez"
+            }
+        ],
+        dossierUrl: null,
+        video: 'https://www.youtube.com/watch?v=IsHm4xNlCgM'
+    },
+    {
+        id: 9,
         title: "La biopolítica en el cuerpo de Salomé, o la explotación de los cuerpos inocentes",
         image: [
             '/assets/biopolitica-cuerpo-Salome/biopolitica-cuerpo-Salome1.jpeg',
@@ -202,7 +259,41 @@ const works = [
             { role: "Bailarinas", value: "Alumnas IES Cervantes" },
         ],
         dossierUrl: null,
-        video: null
+        video: 'https://www.youtube.com/watch?v=x-A2Mt4K9pE&authuser=1'
+    },
+    {
+        id: 10,
+        title: "Érase una vez un Gijoe en la cólquide de Uganda",
+        image: [
+            '/assets/erase-una-vez/erase-una-vez1.jpeg',
+            '/assets/erase-una-vez/erase-una-vez2.jpeg',
+            '/assets/erase-una-vez/erase-una-vez3.jpeg',
+            '/assets/erase-una-vez/erase-una-vez4.jpeg',
+            '/assets/erase-una-vez/erase-una-vez5.jpeg',
+            '/assets/erase-una-vez/erase-una-vez6.jpeg',
+            '/assets/erase-una-vez/erase-una-vez7.jpeg',
+            '/assets/erase-una-vez/erase-una-vez8.jpeg'
+    
+        ],
+        description: [
+            "Siguiendo los pasos del caso de Jason Russell, creador del vídeo “Kony 2012”. Russell cumple, en nuestra opinión, con los requisitos más estrictos del héroe trágico, y, por ello, queremos llevar a cabo una autocrítica a partir de su historia de vida. Todos los occidentales somos, de alguna manera, ese héroe trágico, porque todos estamos culturalmente inmersos en la lógica redentora occidentalista. Jason Russell intenta inaugurar un nuevo modo de cambiar el mundo en la era de internet, así como en su día lo hicieran los románticos que se lanzaban al vacío de las cruzadas, o los ideadores de la Revolución Francesa que terminaron siendo decapitados por aquellos a los que llamaron a levantarse en armas contra el poder."
+        ],
+        year: 2020,
+        category: "teatro documento",
+        credits: [
+            {
+                role: "Texto", value: "Paloma Arroyo"
+            },
+            { role: "Dirección", value: "Ana Contreras" },
+            { role: "Coreografía", value: "Paola T" },
+            { role: "Intérpretes", value: "Esther Arranz, Nadal Bin, Begoña Caparrós, Rita Carrasco, Mamadou Coulibaly, Thomas King, Jessica Miranda, Julio Provencio y Paola T."},
+            { role: "Música", value: "Alberto Tresguerres" },
+            { role: "Prensa", value: "Manuel Benito" },
+            { role: "Producción", value: "Becuadro Teatro" },
+            { role: "Presentado en Teatro del Barrio (temporada 2022.23 | Muestra Surge Comunidad de Madrid) y Sala Cuarta Pared (temporada 2023.24)", value: "" }
+        ],
+        dossierUrl: '/assets/dossier-obras/argonautas-dossier-2020.pdf',
+        video: 'https://www.youtube.com/watch?v=bUVK9_T9ldc'
     }
 ];
 
