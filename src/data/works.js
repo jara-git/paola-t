@@ -214,7 +214,7 @@ const works = [
             { role: "dea y concepto", value: "Paola T." }
         ],
         dossierUrl: '/assets/dossier-obras/dossier-no-estoy_compressed.pdf',
-        video: null
+        video: 'https://www.youtube.com/watch?v=x-A2Mt4K9pE'
     },
     {
         id: 8,
