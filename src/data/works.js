@@ -218,7 +218,7 @@ const works = [
     },
     {
         id: 8,
-        title: " Pater, mater y frater",
+        title: " Pater, mater, frater",
         image: [
             '/assets/mater-fater-frater/mater-fater-frater.png',
         ],
@@ -231,7 +231,7 @@ const works = [
         category: "Teatro documento- Residencia artística Conde Duque",
         credits: [
             {
-                role: "Dirección y ideación", value: "Paola T. Sanchís y Manu Báñez"
+                role: "Dirección e ideación", value: "Paola T. Sanchís y Manu Báñez"
             }
         ],
         dossierUrl: null,
@@ -256,7 +256,7 @@ const works = [
             {
                 role: "Ponentes performativas", value: "Paola T, Paloma Arroyo"
             },
-            { role: "Bailarinas", value: "Alumnas IES Cervantes" },
+            { role: "Bailarinas", value: "Alumnas IES Cervantes" }
         ],
         dossierUrl: null,
         video: 'https://www.youtube.com/watch?v=x-A2Mt4K9pE&authuser=1'
@@ -294,7 +294,114 @@ const works = [
         ],
         dossierUrl: '/assets/dossier-obras/argonautas-dossier-2020.pdf',
         video: 'https://www.youtube.com/watch?v=bUVK9_T9ldc'
-    }
-];
+    },
+    {
+        id: 11,
+        title: "No hay que hacer nada para que te quieran...",
+        image: [
+            '/assets/No-hay-que-hacer- calle/No-hay-que-hacer- calle1.jpeg',
+            '/assets/No-hay-que-hacer- calle/No-hay-que-hacer- calle2.jpeg',
+            '/assets/No-hay-que-hacer- calle/No-hay-que-hacer- calle3.jpeg',
+            '/assets/No-hay-que-hacer- calle/No-hay-que-hacer- calle4.jpeg',
+            '/assets/No-hay-que-hacer- calle/No-hay-que-hacer- calle5.jpeg',
+        ],
+        description: [
+            "No hay que hacer nada para que te quieran... o la presencia el cuerpo de la mujer en las letras del flamenco.",
+            "El cuerpo femenino aparece como una constante en todo el ámbito flamenco.Nuestra coreografía reflexiona sobre la presencia de la mujer, bien como sujeto, bien como objeto, en las letras de los cantes, donde encontramos reflexiones y aseveraciones generales sobre la mujer; sobre sus actitudes y comportamientos y, en especial, sobre su relación con el hombre.Letras anacrónicas impregnadas de la visión patriarcal, que bailamos  re - producimos) una y otra vez casi sin darnos cuenta.Letras sobre el cuerpo de la mujer, vinculadas a los mitos más reaccionarios del amor romántico, como seducción, belleza, locura, celos, maltrato y muerte.Queremos con esta pieza, adherir nuestros cuerpos a otra estética flamenca, tenemos el deseo y la necesidad de mirar - nos desde otro prisma.La danza es un lugar de libertad que las mujeres han encontrado, un espacio donde crear su sentido, donde expresar algo propio a través de temas próximos a nuestra experiencia de vida.Necesitamos más voces nuevas, estéticas nuevas, nuevas letras y nuevas historias"
+        ],
+        year: 2019,
+        category: "Danza en la calle o en espacios no convencionales",
+        credits: [
+            {
+            role: "Ideal original y creación escénica", value: "Paola T."
+            },
+            { role: "Coreografía", value: "Paola T.en colaboración con las integrantes del laboratorio Folkcorp - Lab" },
+            { role: "Producción", value: "Paola T./ F.de Asfalto" },
+            { role: "Bailaoras - interpretes", value: "Rita Carrasco, Ana Belén López Rodríguez, Sara Ramos, Carmen Cervantes y Paola T. " }
+        ],
+        dossierUrl:'/assets/dossier-obras/no hay que hacer nada para que te quieran.pdf',
+        video: 'https://www.youtube.com/watch?v=EwXNRgYAnGM&t=4s'
+    },
+    {
+        id: 12,
+        title: "No hay que hacer nada para que te quieran...",
+        image: [
+            '/assets/No-hay-que-hacer-nada-sala/No-hay-que-hacer-nada-sala1.jpeg',
+            '/assets/No-hay-que-hacer-nada-sala/No-hay-que-hacer-nada-sala2.jpeg',
+            '/assets/No-hay-que-hacer-nada-sala/No-hay-que-hacer-nada-sala3.jpeg',
+            '/assets/No-hay-que-hacer-nada-sala/No-hay-que-hacer-nada-sala4.jpeg',
+            '/assets/No-hay-que-hacer-nada-sala/No-hay-que-hacer-nada-sala5.jpeg',
+            '/assets/No-hay-que-hacer-nada-sala/No-hay-que-hacer-nada-sala6.jpeg'
+        ],
+        description: [
+            "No hay que hacer nada para que te quieran... o la presencia el cuerpo de la mujer en las letras del flamenco.",
+            "El cuerpo femenino aparece como una constante en todo el ámbito flamenco.Nuestra coreografía reflexiona sobre la presencia de la mujer, bien como sujeto, bien como objeto, en las letras de los cantes, donde encontramos reflexiones y aseveraciones generales sobre la mujer; sobre sus actitudes y comportamientos y, en especial, sobre su relación con el hombre.Letras anacrónicas impregnadas de la visión patriarcal, que bailamos  re - producimos) una y otra vez casi sin darnos cuenta.Letras sobre el cuerpo de la mujer, vinculadas a los mitos más reaccionarios del amor romántico, como seducción, belleza, locura, celos, maltrato y muerte.Queremos con esta pieza, adherir nuestros cuerpos a otra estética flamenca, tenemos el deseo y la necesidad de mirar - nos desde otro prisma.La danza es un lugar de libertad que las mujeres han encontrado, un espacio donde crear su sentido, donde expresar algo propio a través de temas próximos a nuestra experiencia de vida.Necesitamos más voces nuevas, estéticas nuevas, nuevas letras y nuevas historias"
+        ],
+        year: 2021,
+        category: "Danza en la calle o en espacios no convencionales",
+        credits: [
+            {
+                role: "Ideal original y creación escénica:", value: "Paola T."
+            },
+            { role: "Coreografía", value: "Paola T.en colaboración con las integrantes del laboratorio Folkcorp - Lab" },
+            { role: "Producción", value: "Paola T./ F.de Asfalto" },
+            {
+                role: "Bailaoras - interpretes", value: "Rita Carrasco, Ana Belén López Rodríguez, Sara Ramos, Carmen Cervantes y Paola T." }
+        ],
+        dossierUrl: '/assets/dossier-obras/dossier-no-hay-que-hace-sala.pdf',
+        video: 'https://www.youtube.com/watch?v=7FQFunLzclo'
+    },
+    {
+        id: 13,
+        title: "DG Extracorpórea (Los árboles)",
+        image: [
+            '/assets/extracorporea/extracorporea1.jpeg',
+            '/assets/extracorporea/extracorporea2.jpeg',
+            '/assets/extracorporea/extracorporea3.jpeg',
+            '/assets/extracorporea/extracorporea4.jpeg',
+            '/assets/extracorporea/extracorporea5.jpeg',
+            '/assets/extracorporea/extracorporea6.jpeg',
+            '/assets/extracorporea/extracorporea7.jpeg',
+            '/assets/extracorporea/extracorporea8.jpeg',
+            '/assets/extracorporea/extracorporea9.jpeg'
+        ],
+        description: [
+            "Inspirado en el teatro inmersivo, previo a la pieza de danza hay un recorrido inédito y exclusivo por los parques o zonas arbóreas del lugar con la participación del público y vecinos. Los árboles serán protagonistas de las historias del lugar elegido en cada caso."
+        ],
+        year: 2023,
+        category: "Teatro-danza inmersivo con el vecindario",
+        credits: [
+            {
+                role: "Ideal original y creación escénica", value: "Paola T."
+            },
+            {
+                role: "Coreografía", value: "Paola T con la colaboración del colectivo Folkcorp-Lab (RitaCarrasco, Ana Belén López Rodríguez, Cris Azul, Carolina Amor, Mango Cotrina y Paloma Arroyo)"
+            },
+            { role: "Producción", value: "Flamencos de asfalto- Paola T. SA" },
+            {
+                role: "Música", value: "Richard Barney"
+            },
+            {
+                role: "Iluminación", value: "Paola T."
+                
+            },
+            { role: "Vestuario", value: "Paola T. / Colectivo Folkcorp - lab"},
+
+
+            {
+                role: "Asesoría arbórea y audiovisuales", value: "Natxo Blanchart - Arriba las ramas"
+            },
+
+            {
+                role: "Foto", value: "Alenka Robine"
+            }
+        ],
+        dossierUrl: '/assets/dossier-obras/dossier-no-hay-que-hace-sala.pdf',
+        video: 'https://www.youtube.com/watch?v=M-v343839eY'
+    },
+];  
+
+ 
+
 
 export default works;
