@@ -31,11 +31,22 @@ export default function Header() {
                     Home
                 </Link>
                 <Link
+                    to="/docencia-laboratorio"
+                    onClick={closeMenu}
+                    className={`header__link${location.pathname === '/docencia-laboratorio'
+                            ? ' header__link--active'
+                            : ''
+                        }`}
+                >
+                    Docencia / Laboratorio
+                </Link>
+
+                <Link
                     to="/agenda"
                     onClick={closeMenu}
                     className={`header__link${location.pathname === '/agenda' ? ' header__link--active' : ''}`}
                 >
-                    Agenda / Cursos
+                    Agenda
                 </Link>
                 <Link
                     to="/sobre-mi"
