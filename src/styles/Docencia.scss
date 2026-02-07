@@ -16,23 +16,26 @@
     font-weight: 400;
     opacity: 0.8;
 }
-
-section {
-    margin-top: 3rem;
+.docencia {
+    section {
+            margin-top: .2rem;
+            padding: 1rem 0;
+        }
+                h3 {
+                    margin-bottom: 1rem;
+                    font-size: 1.4rem;
+                }
+        
+                ul {
+                    padding-left: 1.2rem;
+                }
+        
+                li {
+                    margin-bottom: 0.5rem;
+                }
 }
 
-h3 {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
 
-ul {
-    padding-left: 1.2rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
 
 .docencia-cta {
     margin-top: 4rem;
