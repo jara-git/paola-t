@@ -10,7 +10,25 @@ export default function GalleryModal({ work, onClose }) {
 
     if (!work) return null;
 
-    // Función para formatear la descripción del poema en estrofas
+    // Extraer enlace a vídeo completo si existe
+    const videoCompletoLink = work.credits?.find(item =>
+        item.role.toLowerCase().includes('enlace a video completo') ||
+        item.role.toLowerCase().includes('video completo') ||
+        item.value?.includes('youtu')
+    )?.value;
+
+    // Créditos normales (sin enlace a vídeo completo)
+    const normalCredits = work.credits?.filter(
+        item => item !== videoCompletoLink
+    );
+
+    // Enlace a docencia / laboratorio si existe
+    const laboratorioLink = work.credits?.find(item =>
+        item.role.toLowerCase().includes('docencia') ||
+        item.role.toLowerCase().includes('laboratorio')
+    )?.value;
+
+    // Función para formatear la descripción en estrofas
     const formatDescription = (description) => {
         if (Array.isArray(description)) {
             return description.map((line, index) => {
@@ -28,7 +46,7 @@ export default function GalleryModal({ work, onClose }) {
         return null;
     };
 
-    // Función para generar iframe de YouTube o Vimeo
+    // Función para renderizar el trailer
     const renderVideo = (videoUrl) => {
         if (videoUrl.includes('youtu')) {
             const embedUrl = videoUrl
@@ -59,7 +77,6 @@ export default function GalleryModal({ work, onClose }) {
                 ></iframe>
             );
         } else {
-            // Video local o directo
             return (
                 <video controls>
                     <source src={videoUrl} type="video/mp4" />
@@ -70,8 +87,8 @@ export default function GalleryModal({ work, onClose }) {
     };
 
     return (
-        <div className="gallery-modal-overlay">
-            <div className="gallery-modal-content">
+        <div className="gallery-modal-overlay" onClick={onClose}>
+            <div className="gallery-modal-content" onClick={e => e.stopPropagation()}>
                 <button onClick={onClose} className="gallery-modal-close-button">✕</button>
 
                 {/* Título y año */}
@@ -107,24 +124,67 @@ export default function GalleryModal({ work, onClose }) {
                     </div>
                 )}
 
-                {/* Video */}
+                {/* Trailer */}
                 {work.video && (
-                    <div className="gallery-modal-video">
-                        {renderVideo(work.video)}
+                    <div className="gallery-modal-video">{renderVideo(work.video)}</div>
+                )}
+
+                {/* Enlace elegante a vídeo completo */}
+                {videoCompletoLink && (
+                    <div className="gallery-modal-video-link">
+                        <a
+                            href={videoCompletoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="video-completo-link"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            Vídeo completo
+                        </a>
+                    </div>
+                )}
+
+                {/* Enlace a Docencia / Laboratorio */}
+                {laboratorioLink && (
+                    <div className="gallery-modal-lab-link">
+                        <a
+                            href={laboratorioLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="video-completo-link"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            Docencia / Laboratorio
+                        </a>
                     </div>
                 )}
 
                 {/* Créditos */}
-                {work.credits && work.credits.length > 0 && (
+                {normalCredits && normalCredits.length > 0 && (
                     <div className="gallery-modal-credits">
                         <h3>Créditos</h3>
-                        <ul>
-                            {work.credits.map((item, index) => (
-                                <li key={index}>
-                                    <strong>{item.role}:</strong> {item.value}
-                                </li>
-                            ))}
-                        </ul>
+                        {normalCredits.map((item, index) => (
+                            <p key={index}>
+                                <strong>{item.role}:</strong> {item.value}
+                            </p>
+                        ))}
+                    </div>
+                )}
+
+                {/* Enlaces externos */}
+                {work.externalLinks && work.externalLinks.length > 0 && (
+                    <div className="gallery-modal-external-links">
+                        {work.externalLinks.map((link, index) => (
+                            <a
+                                key={index}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="external-link"
+                            >
+                                {link.label}
+                            </a>
+                        ))}
                     </div>
                 )}
 

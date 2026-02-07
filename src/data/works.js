@@ -425,9 +425,12 @@ const works = [
             "Nuestra propuesta FOLKCORP-LAB se centra en renovar la perspectiva del flamenco dentro del pensamiento contemporáneo y las nuevas prácticas escénicas de las Artes Vivas. Queremos fomentar un encuentro práctico entre los diferentes agentes artísticos de Madrid que trabajan en nuevas praxis en escena, partiendo desde el flamenco y de la música tradicional hacia la improvisación en danza y la música contemporánea, ampliando así las posibilidades de estudio, buscando nuevas líneas de investigación,abriendo al pensamiento teórico el estudio de la investigación en todo el imaginario del folklore, el flamenco y la danza contemporánea."
         ],
         credits: [
-            {
-                role: "Enlace a docencia / laboratorio ", value: "https://paola-t.es/docencia-laboratorio"
-            } ]
+            { role: "Coordinación", value: "Paola T." },
+            { role: "Colaboradores", value: "Equipo Folkcorp-Lab" }
+        ],
+        externalLinks: [
+            { label: "Docencia / Laboratorio", url: "https://paola-t.es/docencia-laboratorio" }
+        ]
     }
 ];  
 

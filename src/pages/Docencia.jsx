@@ -1,24 +1,63 @@
 import '../styles/Docencia.scss'
 import AnimatedTitle from '../components/AnimatedTitle'
-
+import works from '../data/works'
+import { useState } from 'react'
+import GalleryModal from '../components/GalleryModal'
+import Masonry from 'react-masonry-css'
 
 export default function Docencia() {
+    const laboratorio = works.find(work => work.title === "Laboratorio")
+    const [modalOpen, setModalOpen] = useState(false)
+    const [selectedImage, setSelectedImage] = useState(0)
+
+    const openModal = (index) => {
+        setSelectedImage(index)
+        setModalOpen(true)
+    }
+
+    const closeModal = () => {
+        setModalOpen(false)
+        setSelectedImage(0)
+    }
+
+    // Breakpoints idénticos a los de la home
+    const breakpointCols = {
+        default: 3,
+        1280: 3,
+        1024: 2,
+        600: 1
+    }
+
     return (
         <section className="docencia">
-
             {/* HEADER */}
             <header className="docencia-header">
                 <AnimatedTitle text="FOLKCORP LAB" />
                 <h2>Laboratorio de investigación y creación en flamenco contemporáneo y folklore</h2>
             </header>
 
-            {/* Cuadrícula imágenes */}
-            <section className="grid-img">
-                <div className="wrapper-grid">
-                    
+            {/* CUADRÍCULA DE IMÁGENES (igual que la home) */}
+            {laboratorio && (
+                <div className="gallery-wrapper">
+                    <div className="gallery-inner">
+                        <Masonry
+                            breakpointCols={breakpointCols}
+                            className="gallery-grid"
+                            columnClassName="gallery-column"
+                        >
+                            {laboratorio.image.map((imgSrc, index) => (
+                                <div
+                                    key={index}
+                                    className="gallery-item"
+                                    onClick={() => openModal(index)}
+                                >
+                                    <img src={imgSrc} alt={`Laboratorio ${index + 1}`} />
+                                </div>
+                            ))}
+                        </Masonry>
+                    </div>
                 </div>
-
-            </section>
+            )}
 
             {/* INTRO */}
             <section className="docencia-intro">
@@ -35,7 +74,7 @@ export default function Docencia() {
                 </p>
             </section>
 
-            {/* LINEAS DE INVESTIGACION */}
+            {/* LÍNEAS DE INVESTIGACIÓN */}
             <section className="docencia-lines">
                 <h3>Líneas de investigación</h3>
                 <ul>
@@ -49,7 +88,7 @@ export default function Docencia() {
                 </ul>
             </section>
 
-            {/* METODOLOGIA */}
+            {/* METODOLOGÍA */}
             <section className="docencia-method">
                 <h3>Metodología de trabajo</h3>
                 <p>
@@ -82,8 +121,8 @@ export default function Docencia() {
                     piezas escénicas, paseos performativos y dispositivos audiovisuales, adaptándose
                     a diferentes contextos y espacios.
                 </p>
-                {/* Aquí luego puedes meter imágenes o carrusel */}
             </section>
+
 
             {/* CTA */}
             <section className="docencia-cta">
@@ -96,7 +135,14 @@ export default function Docencia() {
                 </a>
             </section>
 
+            {/* MODAL PARA IMÁGENES */}
+            {modalOpen && (
+                <GalleryModal
+                    work={laboratorio}
+                    onClose={closeModal}
+                    initialImage={selectedImage}
+                />
+            )}
         </section>
     )
 }
-

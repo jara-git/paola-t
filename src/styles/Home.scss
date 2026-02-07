@@ -2,11 +2,8 @@
 @use './cta' as *;
 
 .home {
-    // padding: 0 $spacing-unit;
     max-width: none;
     width: 100%;
-    // display: flex;
-    // justify-content: center;
 
     .contact-content {
         display: flex;
