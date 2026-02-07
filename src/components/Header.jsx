@@ -41,13 +41,13 @@ export default function Header() {
                     Docencia / Laboratorio
                 </Link>
 
-                <Link
+                {/* <Link
                     to="/agenda"
                     onClick={closeMenu}
                     className={`header__link${location.pathname === '/agenda' ? ' header__link--active' : ''}`}
                 >
                     Agenda
-                </Link>
+                </Link> */}
                 <Link
                     to="/sobre-mi"
                     onClick={closeMenu}

@@ -12,6 +12,14 @@ export default function Docencia() {
                 <h2>Laboratorio de investigación y creación en flamenco contemporáneo y folklore</h2>
             </header>
 
+            {/* Cuadrícula imágenes */}
+            <section className="grid-img">
+                <div className="wrapper-grid">
+                    
+                </div>
+
+            </section>
+
             {/* INTRO */}
             <section className="docencia-intro">
                 <p>

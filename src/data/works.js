@@ -46,7 +46,7 @@ const works = [
             { role: "Creación", value: "Paola T." },
             { role: "interpretación", value: "Paola T." }
         ],
-        dossierUrl: "https://example.com/dossiers/entre_sombras.pdf",
+        dossierUrl: null,
         video: null
     },
     {
@@ -110,7 +110,7 @@ const works = [
             { role: "Iluminación y escenografía", value: "Paola T." },
             { role: "Dirección", value: "Paola T." }
         ],
-        dossierUrl: 'https://example.com/dossiers/volver_a_la_sal.pdf',
+        dossierUrl: null,
         video: null
     },
     {
@@ -141,7 +141,8 @@ const works = [
             { role: "Espacio escénico y escenografía", value: "Davinia Fillol" }, 
             { role: "Diseño carteles", value: "Ay Carmela Pro" },
             { role: "Asistente de coreografía", value: "Antje Zemmin" },
-            { role: "Dirección", value: "Paola T." }
+            { role: "Dirección", value: "Paola T." },
+            { role: " enlace a video completo", value: "enlace a vídeo completo: https://youtu.be/qYxxY6KQp90?si=kIui6HYhJ-nhmp88"}
         ],
         dossierUrl: '/assets/dossier-obras/dossier-el-cojo-de-vera.pdf',
         video: 'https://youtu.be/_MAG9x-vkfQ?si=XRzvFrx5_KSC9leD'
@@ -259,7 +260,7 @@ const works = [
             { role: "Bailarinas", value: "Alumnas IES Cervantes" }
         ],
         dossierUrl: null,
-        video: 'https://www.youtube.com/watch?v=x-A2Mt4K9pE&authuser=1'
+        video: null
     },
     {
         id: 10,
@@ -399,7 +400,37 @@ const works = [
         dossierUrl: '/assets/dossier-obras/dossier-no-hay-que-hace-sala.pdf',
         video: 'https://www.youtube.com/watch?v=M-v343839eY'
     },
+    {
+        id: 14,
+        title: "Laboratorio",
+        image: [
+            '/assets/laboratorio/laboratorio-01.jpeg',
+            '/assets/laboratorio/laboratorio-2.jpeg',
+            '/assets/laboratorio/laboratorio-3.jpeg',
+            '/assets/laboratorio/laboratorio-4.jpeg',
+            '/assets/laboratorio/laboratorio-5.jpeg',
+            '/assets/laboratorio/laboratorio-cartel2.png',
+            '/assets/laboratorio/laboratorio-cartel3.jpeg',
+            '/assets/laboratorio/laboratorio-4.jpeg',
+            '/assets/laboratorio/laboratorio-cartel5.jpeg',
+            '/assets/laboratorio/laboratorio-cuerpos-bellos1.jpeg',
+            '/assets/laboratorio/laboratorio-cuerpos-bellos2.jpeg',
+            '/assets/laboratorio/laboratorio-margarita1.jpeg',
+            '/assets/laboratorio/laboratorio-margarita2.jpeg',
+            '/assets/laboratorio/laboratorio-margarita3.jpeg',
+            '/assets/laboratorio/laboratorio-patio1.png',
+            '/assets/laboratorio/laboratorio-patio2.jpeg'
+        ],
+        description: [
+            "Nuestra propuesta FOLKCORP-LAB se centra en renovar la perspectiva del flamenco dentro del pensamiento contemporáneo y las nuevas prácticas escénicas de las Artes Vivas. Queremos fomentar un encuentro práctico entre los diferentes agentes artísticos de Madrid que trabajan en nuevas praxis en escena, partiendo desde el flamenco y de la música tradicional hacia la improvisación en danza y la música contemporánea, ampliando así las posibilidades de estudio, buscando nuevas líneas de investigación,abriendo al pensamiento teórico el estudio de la investigación en todo el imaginario del folklore, el flamenco y la danza contemporánea."
+        ],
+        credits: [
+            {
+                role: "Enlace a docencia / laboratorio ", value: "https://paola-t.es/docencia-laboratorio"
+            } ]
+    }
 ];  
+
 
  
 
