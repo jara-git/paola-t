@@ -14,13 +14,36 @@ html, body {
 
 .main-content {
   flex: 1 0 auto;
-  margin: 6rem auto;
+  margin-top: 6rem;
   margin-bottom: 2rem;
   padding-top: 40px;
-  max-width: 800px;
-  position: relative; 
-  z-index: auto; 
-  @media (max-width: 768px) {
-    padding-top: 0;
+  width: 100%;
+  position: relative;
+  z-index: auto;
 }
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 0;
+  }
+}
+.layout-container {
+  width: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .layout-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }

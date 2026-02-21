@@ -402,7 +402,7 @@ const works = [
     },
     {
         id: 14,
-        title: "Laboratorio",
+        title: "Laboratorio Folkcorp Lab",
         image: [
             '/assets/laboratorio/laboratorio-01.jpeg',
             '/assets/laboratorio/laboratorio-2.jpeg',

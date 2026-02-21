@@ -32,7 +32,7 @@ export default function Docencia() {
         <section className="docencia">
             {/* HEADER */}
             <header className="docencia-header">
-                <AnimatedTitle text="FOLKCORP LAB" />
+                <AnimatedTitle text="Laboratorio Folkcorp Lab" />
                 <h2>Laboratorio de investigación y creación en flamenco contemporáneo y folklore</h2>
             </header>
 
