@@ -65,9 +65,12 @@
 }
 
 .docencia-header h1 {
-    font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    //word-break: break-word; 
 }
+
 
 .docencia-header h2 {
     font-size: 1.2rem;

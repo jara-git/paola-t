@@ -1,14 +1,26 @@
 // src/styles/_animations.scss
 @use "./variables" as *;
 
+    
 .animated-title {
-    display: inline-block;
-    white-space: nowrap;
+    display: block;
+    white-space: normal;
+    line-height: 1.2;
+
+    .word {
+        display: inline-block;
+        white-space: nowrap; // mantiene la palabra unida
+    }
+
+    .space {
+        display: inline-block;
+        width: 0.4em; // controla visualmente el espacio entre palabras
+    }
 
     .letter {
         display: inline-block;
         opacity: 0;
-        transform: translateY(0.5em) scale(0.98); // usar em para adaptarse al tamaño de fuente
+        transform: translateY(0.5em) scale(0.98);
         transition: opacity 400ms ease, transform 400ms ease;
         will-change: opacity, transform;
     }
