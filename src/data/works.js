@@ -12,7 +12,7 @@ const works = [
             "Actriz de cine y teatro, cantante y escritora, Hildegard Knef es considerada la última gran diva alemana del siglo XX.",
             "Solo diez años después de su muerte, ya sobrevuela sobre ella un halo de grandeza, siempre acompañado de misticismo y polémica.",
             "Hoy lloverán rosas rojas en su recuerdo, como pedía en su canción Für mich soll’s rote Rosen regnen.",
-            "Con 16 solía decir que quiero entender, conocer, experimentar. No quiero estar sola y, aun así, ser libre (...) Que lluevan rosas rojas por mi..."
+            "Con 16 solía decir que quiero entender, conocer, experimentar. No quiero estar sola y, aun así, ser libre (...) Que lluevan rosas rojas por mí..."
         ],
         year: 2010,
         category: "Danza",
@@ -38,7 +38,7 @@ const works = [
             '/assets/negacion/negacion-10-49.jpeg'
         ],
         description: [
-            "…despoblada/vacía/sola/impar…de la imposibilidad de amar…espinas…piedras que lloran..."
+            "…despoblada/vacía/sola/impar… de la imposibilidad de amar… espinas… piedras que lloran..."
         ],
         year: 2009,
         category: "solo de danza- flamenco experimental",
@@ -60,7 +60,7 @@ const works = [
             '/assets/esos/esos-5-39.jpeg',
             '/assets/esos/esos-6-41.jpeg'
         ],
-        description: "…el mundo está pensado por y para los que tienen poder…el poder siempre busca los medios para perpetuarse…las decisiones fundamentales no se consultan… la falta de oportunidades parece culpa del que la padece… y se vio que esto era bueno…a la gente se le engaña como a chinos…y se vio que esto era bueno…general la mayor cantidad de cómplices posible es una manera de hacer que no haya responsables… lo peor es ser cómplices obligados… lo peor es que son intereses muy mezquinos los que mueven el mundo… un interés mezquino siempre tendrá más fuerza que un ideal… la falta de honestidad es lo más común…lo peor es la justificación y legitimación de lo peor…",
+        description: "…el mundo está pensado por y para los que tienen poder… el poder siempre busca los medios para perpetuarse… las decisiones fundamentales no se consultan… la falta de oportunidades parece culpa del que la padece… y se vio que esto era bueno… a la gente se le engaña como a chinos… y se vio que esto era bueno…general la mayor cantidad de cómplices posible es una manera de hacer que no haya responsables… lo peor es ser cómplices obligados… lo peor es que son intereses muy mezquinos los que mueven el mundo… un interés mezquino siempre tendrá más fuerza que un ideal… la falta de honestidad es lo más común…lo peor es la justificación y legitimación de lo peor…",
         year: 2012,
         category: "Teatro contemporáneo",
         credits: [
@@ -165,7 +165,7 @@ const works = [
         category: "teatro documento",
         credits: [
             {
-                role: "Intérpretes", value: "Fernando Valenzuela, Antonia Cilla.Fernando Horcas, Nati Flores.Carlos Arce, Pilar Amblés, Mª Cristina Soto ,Andrés Charriel, Enrique Díaz, Ana María Aceituno, Mª Jesús Aceituno, Adela Jordán, Alberto Santamaría, José Rubio, Paloma Álvarez, Manu Báñez."
+                role: "Intérpretes", value: "Fernando Valenzuela, Antonia Cilla, Fernando Horcas, Nati Flores, Carlos Arce, Pilar Amblés, Mª Cristina Soto, Andrés Charriel, Enrique Díaz, Ana María Aceituno, Mª Jesús Aceituno, Adela Jordán, Alberto Santamaría, José Rubio, Paloma Álvarez, Manu Báñez."
             },
             { role: "Espacio escénico", value: "Ana Montes" },
             { role: "Espacio sonoro", value: "Manu Báñez" },
@@ -200,7 +200,7 @@ const works = [
         description: [
             "Sísifo ha sido castigado por los dioses a subir todos los días una montaña cargado con una roca intensa y pesada, que cuando llega a la cima, cae si remedio, y así, durante toda la eternidad… a través de nuestras vivencias personales como creadores, nos acercamos al mito de Sísifo.",
             "Sísifos modernos que arrastran su roca día a día y empiezan de cero en cada momento. Así consideramos el trabajo artístico, efímero y costoso, pero también absurdo y enriquecedor, como propone Camus.Hay un Sísifo feliz en esta rotación continua, en esta acción creadora repetitiva hay una salvación / revolución, y eso reivindicamos.",
-            "El proceso creativo, la construcción de escenas en una Torre de Babel o laberinto, que es la sala de ensayos.Las letras del flamenco, los porcentajes, las preguntas, las anécdotas, el juego…un enigma que se va resolviendo frente al público"
+            "El proceso creativo, la construcción de escenas en una Torre de Babel o laberinto, que es la sala de ensayos.Las letras del flamenco, los porcentajes, las preguntas, las anécdotas, el juego… un enigma que se va resolviendo frente al público."
         ],
         year: 2016,
         category: "danza - documento",
@@ -249,7 +249,7 @@ const works = [
             "Ponencia performativa dentro del marco del congreso de filosofía y danza  celebrado en junio de 2019 en el Centro de Danza Canal.",
             "Nos proponemos investigar y crear un dispositivo que se base en la historia de una adolescente del siglo XXI, Salomé, centrándonos en las vivencias de las adolescentes que se trabajarán en proceso de investigación. Nuestro objetivo es que, a partir del trabajo corporal (funky, hiphop, danza urbana y voguing), nos hagamos conscientes de la violencia que se ejerce sobre nuestros cuerpos, y la consecuente necesidad de politizarlos, basándonos en entrevistas que realizaremos a colectivos en riesgo de exclusión. A partir de esta investigación(taller y entrevistas), reconstruiremos una historia de vida, la de Salomé, quien inconscientemente reproduce mecanismos de explotación, reformulados en la era farmacopornográfica, como diría Paul B.Preciado.",
             "Salomé, como toda adolescente, persigue de manera frenética alcanzar el ritmo de vida que presupone una adaptación constante a nuevas formas de relacionarse tanto social como personalmente, determinada por el paradigma de explotación tecnológico en el que nos vemos inmersos. Los neo - marxismos y la biopolítica coinciden en cuestionar la ideología hegemónica que se nos impone desde la institución, y que repercute directamente en la práxis social, generando, como en la sociedad industrial que criticaba Marx, relaciones verticales de poder.",
-            "En este proyecto queremos incidir en las nuevas formas de explotación ejercidas sobre los cuerpos inocentes, para cuestionarlos mediante lenguajes que superen una lógica binaria, tal y como planteaba Artaud, en su teatro de la crueldad.En la adolescencia nos enfrentamos al mundo desde nuestro cuerpo inocente. Salomé es un lienzo en blanco, que crea su identidad. Se presenta al mundo a partir de una pulsión.Inevitablemente, su espontaneidad entrará en conflicto con la normatividad"
+            "En este proyecto queremos incidir en las nuevas formas de explotación ejercidas sobre los cuerpos inocentes, para cuestionarlos mediante lenguajes que superen una lógica binaria, tal y como planteaba Artaud, en su teatro de la crueldad.En la adolescencia nos enfrentamos al mundo desde nuestro cuerpo inocente. Salomé es un lienzo en blanco, que crea su identidad. Se presenta al mundo a partir de una pulsión. Inevitablemente, su espontaneidad entrará en conflicto con la normatividad."
         ],
         year: 2019,
         category: "ponencia performativa",
@@ -308,7 +308,7 @@ const works = [
         ],
         description: [
             "No hay que hacer nada para que te quieran... o la presencia el cuerpo de la mujer en las letras del flamenco.",
-            "El cuerpo femenino aparece como una constante en todo el ámbito flamenco. Nuestra coreografía reflexiona sobre la presencia de la mujer, bien como sujeto, bien como objeto, en las letras de los cantes, donde encontramos reflexiones y aseveraciones generales sobre la mujer; sobre sus actitudes y comportamientos y, en especial, sobre su relación con el hombre. Letras anacrónicas impregnadas de la visión patriarcal, que bailamos  re - producimos) una y otra vez casi sin darnos cuenta.Letras sobre el cuerpo de la mujer, vinculadas a los mitos más reaccionarios del amor romántico, como seducción, belleza, locura, celos, maltrato y muerte. Queremos con esta pieza, adherir nuestros cuerpos a otra estética flamenca, tenemos el deseo y la necesidad de mirar - nos desde otro prisma. La danza es un lugar de libertad que las mujeres han encontrado, un espacio donde crear su sentido, donde expresar algo propio a través de temas próximos a nuestra experiencia de vida.Necesitamos más voces nuevas, estéticas nuevas, nuevas letras y nuevas historias"
+            "El cuerpo femenino aparece como una constante en todo el ámbito flamenco. Nuestra coreografía reflexiona sobre la presencia de la mujer, bien como sujeto, bien como objeto, en las letras de los cantes, donde encontramos reflexiones y aseveraciones generales sobre la mujer; sobre sus actitudes y comportamientos y, en especial, sobre su relación con el hombre. Letras anacrónicas impregnadas de la visión patriarcal, que bailamos  re - producimos) una y otra vez casi sin darnos cuenta. Letras sobre el cuerpo de la mujer, vinculadas a los mitos más reaccionarios del amor romántico, como seducción, belleza, locura, celos, maltrato y muerte. Queremos con esta pieza, adherir nuestros cuerpos a otra estética flamenca, tenemos el deseo y la necesidad de mirar - nos desde otro prisma. La danza es un lugar de libertad que las mujeres han encontrado, un espacio donde crear su sentido, donde expresar algo propio a través de temas próximos a nuestra experiencia de vida. Necesitamos más voces nuevas, estéticas nuevas, nuevas letras y nuevas historias."
         ],
         year: 2019,
         category: "Danza en la calle o en espacios no convencionales",
@@ -336,7 +336,7 @@ const works = [
         ],
         description: [
             "No hay que hacer nada para que te quieran... o la presencia el cuerpo de la mujer en las letras del flamenco.",
-            "El cuerpo femenino aparece como una constante en todo el ámbito flamenco.Nuestra coreografía reflexiona sobre la presencia de la mujer, bien como sujeto, bien como objeto, en las letras de los cantes, donde encontramos reflexiones y aseveraciones generales sobre la mujer; sobre sus actitudes y comportamientos y, en especial, sobre su relación con el hombre.Letras anacrónicas impregnadas de la visión patriarcal, que bailamos  re - producimos) una y otra vez casi sin darnos cuenta.Letras sobre el cuerpo de la mujer, vinculadas a los mitos más reaccionarios del amor romántico, como seducción, belleza, locura, celos, maltrato y muerte.Queremos con esta pieza, adherir nuestros cuerpos a otra estética flamenca, tenemos el deseo y la necesidad de mirar - nos desde otro prisma.La danza es un lugar de libertad que las mujeres han encontrado, un espacio donde crear su sentido, donde expresar algo propio a través de temas próximos a nuestra experiencia de vida.Necesitamos más voces nuevas, estéticas nuevas, nuevas letras y nuevas historias"
+            "El cuerpo femenino aparece como una constante en todo el ámbito flamenco. Nuestra coreografía reflexiona sobre la presencia de la mujer, bien como sujeto, bien como objeto, en las letras de los cantes, donde encontramos reflexiones y aseveraciones generales sobre la mujer; sobre sus actitudes y comportamientos y, en especial, sobre su relación con el hombre. Letras anacrónicas impregnadas de la visión patriarcal, que bailamos  re - producimos) una y otra vez casi sin darnos cuenta. Letras sobre el cuerpo de la mujer, vinculadas a los mitos más reaccionarios del amor romántico, como seducción, belleza, locura, celos, maltrato y muerte.Queremos con esta pieza, adherir nuestros cuerpos a otra estética flamenca, tenemos el deseo y la necesidad de mirar - nos desde otro prisma. La danza es un lugar de libertad que las mujeres han encontrado, un espacio donde crear su sentido, donde expresar algo propio a través de temas próximos a nuestra experiencia de vida.Necesitamos más voces nuevas, estéticas nuevas, nuevas letras y nuevas historias."
         ],
         year: 2021,
         category: "Danza en la calle o en espacios no convencionales",
