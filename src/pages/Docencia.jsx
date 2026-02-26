@@ -6,7 +6,11 @@ import GalleryModal from '../components/GalleryModal'
 import Masonry from 'react-masonry-css'
 
 export default function Docencia() {
-    const laboratorio = works.find(work => work.title === "Laboratorio")
+    const laboratorio = works.find(
+        work => work.title?.toLowerCase().includes("laboratorio")
+    )
+
+
     const [modalOpen, setModalOpen] = useState(false)
     const [selectedImage, setSelectedImage] = useState(0)
 
@@ -28,6 +32,8 @@ export default function Docencia() {
         600: 1
     }
 
+    
+
     return (
         <section className="docencia">
             {/* HEADER */}
@@ -36,8 +42,8 @@ export default function Docencia() {
                 <h2>Laboratorio de investigación y creación en flamenco contemporáneo y folklore</h2>
             </header>
 
-            {/* CUADRÍCULA DE IMÁGENES (igual que la home) */}
-            {laboratorio && (
+            {/* CUADRÍCULA DE IMÁGENES */}
+            {laboratorio?.image?.length > 0 ? (
                 <div className="gallery-wrapper">
                     <div className="gallery-inner">
                         <Masonry
@@ -57,6 +63,8 @@ export default function Docencia() {
                         </Masonry>
                     </div>
                 </div>
+            ) : (
+                <p>No hay imágenes disponibles para este laboratorio.</p>
             )}
 
             {/* INTRO */}
@@ -123,7 +131,6 @@ export default function Docencia() {
                 </p>
             </section>
 
-
             {/* CTA */}
             <section className="docencia-cta">
                 <p>
@@ -136,7 +143,7 @@ export default function Docencia() {
             </section>
 
             {/* MODAL PARA IMÁGENES */}
-            {modalOpen && (
+            {modalOpen && laboratorio && (
                 <GalleryModal
                     work={laboratorio}
                     onClose={closeModal}

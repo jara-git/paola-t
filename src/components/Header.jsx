@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '/assets/logo.svg'
 import '../styles/Header.scss'
+import { Instagram } from "lucide-react";
 
 export default function Header() {
     const location = useLocation()
@@ -62,6 +63,14 @@ export default function Header() {
                 >
                     Contacto
                 </Link>
+                <a
+                    href="https://instagram.com/paolat.danzalab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="header__instagram"
+                >
+                    <Instagram size={18} />
+                </a>
             </nav>
         </header>
     )
