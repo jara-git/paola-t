@@ -91,12 +91,12 @@
     display: inline-block;
     margin-top: 1rem;
     font-weight: 600;
-    color: rgb(61, 60, 60);
+    color: rgb(61, 60, 60) !important;
     text-decoration: none;
     transition: color 0.3s;
 
     &:hover {
-        color: rgb(55, 52, 52);
+        color: rgb(55, 52, 52) !important;
         text-decoration: underline;
     }
 }
