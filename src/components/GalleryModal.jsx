@@ -10,23 +10,22 @@ export default function GalleryModal({ work, onClose }) {
 
     if (!work) return null;
 
-    // Extraer enlace a vídeo completo si existe
-    const videoCompletoLink = work.credits?.find(item =>
+    // Extraer créditos especiales
+    const videoCompletoObj = work.credits?.find(item =>
         item.role.toLowerCase().includes('enlace a video completo') ||
         item.role.toLowerCase().includes('video completo') ||
         item.value?.includes('youtu')
-    )?.value;
-
-    // Créditos normales (sin enlace a vídeo completo)
-    const normalCredits = work.credits?.filter(
-        item => item !== videoCompletoLink
     );
 
-    // Enlace a docencia / laboratorio si existe
-    const laboratorioLink = work.credits?.find(item =>
+    const laboratorioObj = work.credits?.find(item =>
         item.role.toLowerCase().includes('docencia') ||
         item.role.toLowerCase().includes('laboratorio')
-    )?.value;
+    );
+
+    // Créditos normales
+    const normalCredits = work.credits?.filter(
+        item => item !== videoCompletoObj && item !== laboratorioObj
+    );
 
     // Función para formatear la descripción en estrofas
     const formatDescription = (description) => {
@@ -126,40 +125,42 @@ export default function GalleryModal({ work, onClose }) {
 
                 {/* Trailer */}
                 {work.video && (
-                    <div className="gallery-modal-video">{renderVideo(work.video)}</div>
+                    <div className="gallery-modal-video">
+                        {renderVideo(work.video)}
+                    </div>
                 )}
 
-                {/* Enlace elegante a vídeo completo */}
-                {videoCompletoLink && (
+                {/* Enlace a vídeo completo */}
+                {videoCompletoObj && (
                     <div className="gallery-modal-video-link">
                         <a
-                            href={videoCompletoLink}
+                            href={videoCompletoObj.value}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="video-completo-link"
                             onClick={e => e.stopPropagation()}
                         >
-                            Vídeo completo
+                            {videoCompletoObj.role}
                         </a>
                     </div>
                 )}
 
                 {/* Enlace a Docencia / Laboratorio */}
-                {laboratorioLink && (
+                {laboratorioObj && (
                     <div className="gallery-modal-lab-link">
                         <a
-                            href={laboratorioLink}
+                            href={laboratorioObj.value}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="video-completo-link"
                             onClick={e => e.stopPropagation()}
                         >
-                            Docencia / Laboratorio
+                            {laboratorioObj.role}
                         </a>
                     </div>
                 )}
 
-                {/* Créditos */}
+                {/* Créditos normales */}
                 {normalCredits && normalCredits.length > 0 && (
                     <div className="gallery-modal-credits">
                         <h3>Créditos</h3>

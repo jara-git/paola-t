@@ -142,7 +142,7 @@ const works = [
             { role: "Diseño carteles", value: "Ay Carmela Pro" },
             { role: "Asistente de coreografía", value: "Antje Zemmin" },
             { role: "Dirección", value: "Paola T." },
-            { role: " Enlace a vídeo completo", value: "https://youtu.be/qYxxY6KQp90?si=kIui6HYhJ-nhmp88"}
+            { role: "Enlace a vídeo completo", value: "https://youtu.be/qYxxY6KQp90?si=kIui6HYhJ-nhmp88"}
         ],
         dossierUrl: '/assets/dossier-obras/dossier-el-cojo-de-vera.pdf',
         video: 'https://youtu.be/_MAG9x-vkfQ?si=XRzvFrx5_KSC9leD'
