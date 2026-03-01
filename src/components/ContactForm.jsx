@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser'
 import '../styles/ContactForm.scss'
 
 export default function ContactForm() {
+
     const [formData, setFormData] = useState({
         from_name: '',
         reply_to: '',
@@ -13,7 +14,10 @@ export default function ContactForm() {
 
     const handleChange = (e) => {
         const { name, value } = e.target
-        setFormData(prev => ({ ...prev, [name]: value }))
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }))
     }
 
     const sendEmail = (e) => {
@@ -21,25 +25,36 @@ export default function ContactForm() {
         setSending(true)
 
         emailjs.send(
-            'service_6h6xncx',       // cambia al Service ID tuyo
-            'template_npk2vai',      // cambia al Template ID tuyo
+            'service_6h6xncx',
+            'template_npk2vai',
             formData,
-            'aQ3gFB9I1AeyFCOeJ'     // cambia al Public Key tuyo
-        ).then(
-            (result) => {
-                alert('Mensaje enviado con éxito ✔︎')
-                setFormData({ from_name: '', reply_to: '', message: '' })
-                setSending(false)
-            },
-            (error) => {
-                alert('Ocurrió un error ✖︎')
-                setSending(false)
-            }
+            'aQ3gFB9I1AeyFCOeJ'
         )
+            .then(() => {
+
+                alert('Mensaje enviado con éxito ✔︎')
+
+                setFormData({
+                    from_name: '',
+                    reply_to: '',
+                    message: ''
+                })
+
+                setSending(false)
+
+            })
+            .catch(() => {
+
+                alert('Ocurrió un error ✖︎')
+
+                setSending(false)
+
+            })
     }
 
     return (
         <form onSubmit={sendEmail} className="contact-form">
+
             <label>Nombre</label>
             <input
                 type="text"
@@ -63,13 +78,14 @@ export default function ContactForm() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                rows={10}
                 required
-                rows={10} // para que sea más grande y cómodo el cuadro de enviar textp
             />
 
-            <button type="submit" disabled={sending} className="cta-button">
+            <button type="submit" disabled={sending}>
                 {sending ? 'Enviando...' : 'Enviar mensaje'}
             </button>
+
         </form>
     )
 }

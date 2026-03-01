@@ -367,16 +367,16 @@ const works = [
             '/assets/extracorporea/extracorporea9.jpeg'
         ],
         description: [
-            "Inspirado en el teatro inmersivo, previo a la pieza de danza hay un recorrido inédito y exclusivo por los parques o zonas arbóreas del lugar con la participación del público y vecinos. Los árboles serán protagonistas de las historias del lugar elegido en cada caso."
+            "Taller-paseo-pieza de danza- Instalación. Inspirado en el teatro inmersivo, previo a la pieza de danza hay un recorrido inédito y exclusivo por los parques o zonas arbóreas del lugar con la participación del público y vecinos. Los árboles serán protagonistas de las historias del lugar elegido en cada caso."
         ],
         year: 2023,
-        category: "Teatro-danza inmersivo con el vecindario",
+        category: "Teatro-danza inmersivo con el vecindario investigación",
         credits: [
             {
                 role: "Ideal original y creación escénica", value: "Paola T."
             },
             {
-                role: "Coreografía", value: "Paola T con la colaboración del colectivo Folkcorp-Lab (RitaCarrasco, Ana Belén López Rodríguez, Cris Azul, Carolina Amor, Mango Cotrina y Paloma Arroyo)"
+                role: "Coreografía", value: "Paola T con la colaboración del colectivo Folkcorp-Lab (Rita Carrasco, Ana Belén López Rodríguez, Cris Azul, Carolina Amor, Mango Cotrina y Paloma Arroyo)"
             },
             { role: "Producción", value: "Flamencos de asfalto- Paola T. SA" },
             {
@@ -402,6 +402,7 @@ const works = [
     },
     {
         id: 14,
+        category: "laboratorio",
         title: "Laboratorio Folkcorp Lab",
         image: [
             '/assets/laboratorio/laboratorio-01.jpeg',

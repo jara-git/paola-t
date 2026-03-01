@@ -1,51 +1,79 @@
-@use "./variables" as *;
-
-// Gallery wrapper y grid
-$gutter: 32px;
-
 .gallery-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: center; // mantiene centrado horizontal
     width: 100%;
 }
 
 .gallery-inner {
     width: 100%;
-    max-width: $max-width;
+    max-width: 1200px; // ancho máximo de la cuadrícula
     margin: 0 auto;
-    padding: 0 $spacing-unit;
+    padding: 0 1rem; // espacio lateral
+    display: flex;
+    flex-direction: column;
+    align-items: center; // mantiene centrado contenido
 }
 
 .gallery-grid {
     display: flex;
-    margin-left: -$gutter;
+    margin-left: -32px; // gutter
     width: auto;
+    justify-content: center; // centrado horizontal de columnas
 }
 
 .gallery-column {
-    padding-left: $gutter;
-    background-clip: padding-box;
+    padding-left: 32px;
 
     >.gallery-item {
-        margin-bottom: $gutter;
+        margin-bottom: 32px;
+    }
+
+        @media (max-width: 768px) {
+            padding-left: 0; 
+        }
+}
+
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 24px;
+    gap: 12px;
+
+    button {
+        padding: 8px 16px;
+        border: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.95rem;
+        transition: background 0.3s;
+
+        &.active {
+            background: #333;
+        }
+
+        &:hover {
+            background: #555;
+        }
     }
 }
 
+/* responsive */
 @media (max-width: 1024px) {
     .gallery-inner {
         padding: 0 1.5rem;
     }
-
-    .gallery-grid {
-        gap: 2rem;
-    }
 }
 
 @media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr; // una columna en tablet más pequeña
+   
+      .gallery-column {
+            padding-left: 0;
+      }  
+      .gallery-grid {
         gap: 1.5rem;
-    }
+      }
 }
 
 @media (max-width: 600px) {
@@ -53,7 +81,9 @@ $gutter: 32px;
         padding: 0 1rem;
     }
 
-    .gallery-grid {
-        gap: 1rem;
-    }
+         .gallery-grid {
+             flex-direction: column; // 1 columna vertical
+             margin-left: 0;
+            
+         }
 }
