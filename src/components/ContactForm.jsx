@@ -2,6 +2,10 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import '../styles/ContactForm.scss'
 
+const SERVICE_ID = 'service_2oie90s'
+const TEMPLATE_ID = 'template_pnrhak3'
+const PUBLIC_KEY = 'klociK9Ho-duQYiMB'
+
 export default function ContactForm() {
 
     const [formData, setFormData] = useState({
@@ -14,6 +18,7 @@ export default function ContactForm() {
 
     const handleChange = (e) => {
         const { name, value } = e.target
+
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -25,12 +30,14 @@ export default function ContactForm() {
         setSending(true)
 
         emailjs.send(
-            'service_6h6xncx',
-            'template_npk2vai',
+            SERVICE_ID,
+            TEMPLATE_ID,
             formData,
-            'aQ3gFB9I1AeyFCOeJ'
+            PUBLIC_KEY
         )
-            .then(() => {
+            .then((response) => {
+
+                console.log('SUCCESS!', response.status, response.text)
 
                 alert('Mensaje enviado con éxito ✔︎')
 
@@ -43,9 +50,11 @@ export default function ContactForm() {
                 setSending(false)
 
             })
-            .catch(() => {
+            .catch((error) => {
 
-                alert('Ocurrió un error ✖︎')
+                console.error('FAILED...', error)
+
+                alert('Ocurrió un error al enviar el mensaje ✖︎')
 
                 setSending(false)
 
