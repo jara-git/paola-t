@@ -87,3 +87,25 @@
             
          }
 }
+
+.gallery-inner {
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+}
+
+.gallery-inner.fade {
+
+    opacity: 0.25;
+    transform: translateY(10px);
+
+}
+
+.gallery-inner {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-inner.fade {
+    opacity: 0.25;
+    transform: translateY(10px);
+}

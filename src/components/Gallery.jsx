@@ -11,64 +11,174 @@ const breakpointCols = {
     600: 1,
 };
 
+/* CONFIGURACIÓN CURATORIAL */
+
 const filterConfig = {
-    "Piezas escénicas": { include: [], exclude: ["laboratorio", "docencia"] },
-    "Investigación": { include: ["investigación"] },
-    "Laboratorio": { include: ["laboratorio"] },
-    "Performance": { include: ["performance"] }
+
+    Todo: [],
+
+    Escena: [
+        "esos",
+        "romance",
+        "cojo de vera",
+        "júbilo",
+        "salomé",
+        "pater",
+        "mater",
+        "frater",
+        "gijoe"
+    ],
+
+    Danza: [
+        "rosas",
+        "utopía",
+        "cojo de vera",
+        "no estoy aquí",
+        "no hay que hacer nada",
+        "extracorpórea"
+    ],
+
+    Mediación: [
+        "salomé",
+        "extracorpórea"
+    ],
+
+    "Talleres-Lab": [
+        "laboratorio",
+        "cuerpos bellos",
+        "margaritas",
+        "patio"
+    ]
+
 };
 
 export default function Gallery({ works }) {
+
     const [selectedIndex, setSelectedIndex] = useState(null);
-    const [activeCategory, setActiveCategory] = useState("Piezas escénicas");
+    const [activeCategory, setActiveCategory] = useState("Todo");
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
+    /* FILTRADO */
 
     const filteredWorks = useMemo(() => {
-        const config = filterConfig[activeCategory];
-        if (!config) return works;
+
+        if (activeCategory === "Todo") return works;
+
+        const filters = filterConfig[activeCategory];
+
         return works.filter(work => {
-            const cat = (work.category || "").toLowerCase();
-            if (config.exclude && config.exclude.some(ex => cat.includes(ex.toLowerCase()))) return false;
-            if (config.include && config.include.length > 0) return config.include.some(inc => cat.includes(inc.toLowerCase()));
-            return true;
+
+            const title = work.title.toLowerCase();
+
+            return filters.some(keyword =>
+                title.includes(keyword.toLowerCase())
+            );
+
         });
+
     }, [activeCategory, works]);
 
-    const openModal = (index) => setSelectedIndex(index);
-    const closeModal = () => setSelectedIndex(null);
-    const handleNavigate = (direction) => {
-        if (!filteredWorks.length) return;
-        if (direction === 'prev') setSelectedIndex(prev => prev > 0 ? prev - 1 : filteredWorks.length - 1);
-        else if (direction === 'next') setSelectedIndex(prev => prev < filteredWorks.length - 1 ? prev + 1 : 0);
+
+    /* CAMBIO DE CATEGORÍA */
+
+    const changeCategory = (cat) => {
+
+        if (cat === activeCategory) return;
+
+        setIsTransitioning(true);
+
+        setTimeout(() => {
+
+            setActiveCategory(cat);
+            setSelectedIndex(null);
+            setIsTransitioning(false);
+
+        }, 200);
+
     };
 
+
+    /* MODAL */
+
+    const openModal = (index) => setSelectedIndex(index);
+
+    const closeModal = () => setSelectedIndex(null);
+
+    const handleNavigate = (direction) => {
+
+        if (!filteredWorks.length) return;
+
+        if (direction === 'prev') {
+
+            setSelectedIndex(prev =>
+                prev > 0 ? prev - 1 : filteredWorks.length - 1
+            );
+
+        }
+
+        if (direction === 'next') {
+
+            setSelectedIndex(prev =>
+                prev < filteredWorks.length - 1 ? prev + 1 : 0
+            );
+
+        }
+
+    };
+
+
     return (
+
         <div className="gallery-wrapper">
-            <div className="gallery-inner">
+
+            <div className={`gallery-inner ${isTransitioning ? "fade" : ""}`}>
+
                 <Masonry
                     breakpointCols={breakpointCols}
                     className="gallery-grid"
                     columnClassName="gallery-column"
                 >
+
                     {filteredWorks.map((work, index) => (
-                        <GalleryItem key={work.id} work={work} onClick={() => openModal(index)} />
+
+                        <GalleryItem
+                            key={work.id}
+                            work={work}
+                            onClick={() => openModal(index)}
+                        />
+
                     ))}
+
                 </Masonry>
 
-                {/* Filtros debajo de la cuadrícula */}
+
+                {/* FILTROS */}
+
                 <div className="gallery-filters">
+
                     {Object.keys(filterConfig).map(cat => (
+
                         <button
                             key={cat}
                             className={activeCategory === cat ? 'active' : ''}
-                            onClick={() => setActiveCategory(cat)}
+                            onClick={() => changeCategory(cat)}
                         >
+
                             {cat}
+
                         </button>
+
                     ))}
+
                 </div>
+
             </div>
 
+
+            {/* MODAL */}
+
             {selectedIndex !== null && (
+
                 <GalleryModal
                     work={filteredWorks[selectedIndex]}
                     onClose={closeModal}
@@ -76,7 +186,11 @@ export default function Gallery({ works }) {
                     isFirst={selectedIndex === 0}
                     isLast={selectedIndex === filteredWorks.length - 1}
                 />
+
             )}
+
         </div>
+
     );
+
 }
